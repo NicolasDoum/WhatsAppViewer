@@ -1,19 +1,16 @@
 import React from 'react';
 import ChatHeader from './ChatHeader';
 import ChatMessages from './ChatMessages';
-import MessageInput from './MessageInput';
 import { ActiveConversation, User, Message } from '@/types';
 
 interface ChatViewProps {
   activeConversation: ActiveConversation;
   currentUser: User;
-  onSendMessage: (content: string) => void;
 }
 
 const ChatView: React.FC<ChatViewProps> = ({ 
   activeConversation, 
-  currentUser,
-  onSendMessage
+  currentUser
 }) => {
   // Get the other participant (not the current user)
   const otherParticipant: User | undefined = 

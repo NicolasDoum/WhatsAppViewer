@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import Sidebar from '@/components/sidebar/Sidebar';
 import ChatView from '@/components/chat/ChatView';
-import { User, Conversation, Message, ActiveConversation } from '@/types';
-import { apiRequest } from '@/lib/queryClient';
+import { User, Conversation, ActiveConversation } from '@/types';
 import { mockUsers, mockConversations, getMockMessagesForConversation, currentUser as mockCurrentUser } from '@/data/mockData';
 
 const Home: React.FC = () => {
@@ -80,57 +79,7 @@ const Home: React.FC = () => {
     enabled: !!activeConversationId
   });
 
-  // Send message mutation
-  const sendMessageMutation = useMutation({
-    mutationFn: async (newMessage: Partial<Message>) => {
-      try {
-        return await apiRequest('POST', '/api/messages', newMessage);
-      } catch (error) {
-        console.error('Error sending message:', error);
-        // For mock purposes, return a fake success
-        return { ok: true };
-      }
-    },
-    onSuccess: () => {
-      // Invalidate the conversation query to refetch with the new message
-      queryClient.invalidateQueries({ queryKey: ['/api/conversations', activeConversationId] });
-    }
-  });
-
-  // Handle sending a new message
-  const handleSendMessage = (content: string) => {
-    if (!activeConversationId || !currentUser) return;
-    
-    // Create a new message
-    const newMessage: Partial<Message> = {
-      conversationId: activeConversationId,
-      senderId: currentUser.id,
-      type: 'text',
-      content,
-      status: 'sent'
-    };
-    
-    // Use the mutation to send the message
-    sendMessageMutation.mutate(newMessage);
-    
-    // Optimistic update for UI
-    if (activeConversation) {
-      const optimisticMessage: Message = {
-        id: Math.floor(Math.random() * -1000), // Temporary negative ID
-        conversationId: activeConversationId,
-        senderId: currentUser.id,
-        type: 'text',
-        content,
-        createdAt: new Date(),
-        status: 'sent'
-      };
-      
-      queryClient.setQueryData(['/api/conversations', activeConversationId], {
-        ...activeConversation,
-        messages: [...activeConversation.messages, optimisticMessage],
-      });
-    }
-  };
+  // Removed message sending functionality for browse-only mode
 
   // Set the first conversation as active on initial load
   useEffect(() => {
@@ -165,7 +114,6 @@ const Home: React.FC = () => {
         <ChatView
           activeConversation={activeConversation}
           currentUser={currentUser}
-          onSendMessage={handleSendMessage}
         />
       ) : (
         <div className="flex-1 flex items-center justify-center bg-gray-100">
