@@ -22,24 +22,12 @@ const ChatListItem: React.FC<ChatListItemProps> = ({
     return null;
   }
 
-  // Format the last message time
+  // Format the last message time - always show as today's time
   const formatMessageTime = (date: Date) => {
-    const now = new Date();
     const messageDate = new Date(date);
     
-    // If the message is from today, show time
-    if (messageDate.toDateString() === now.toDateString()) {
-      return format(messageDate, 'HH:mm');
-    }
-    
-    // If the message is from this week, show day
-    const diffDays = Math.floor((now.getTime() - messageDate.getTime()) / (1000 * 60 * 60 * 24));
-    if (diffDays < 7) {
-      return format(messageDate, 'EEE');
-    }
-    
-    // Otherwise show date
-    return format(messageDate, 'dd/MM/yyyy');
+    // Just show the time (hours:minutes)
+    return format(messageDate, 'HH:mm');
   };
 
   // Get last message preview text

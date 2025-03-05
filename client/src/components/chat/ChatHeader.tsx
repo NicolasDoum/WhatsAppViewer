@@ -7,25 +7,17 @@ interface ChatHeaderProps {
 }
 
 const ChatHeader: React.FC<ChatHeaderProps> = ({ participant }) => {
-  // Format the last seen time
+  // Format the last seen time - always show as today
   const formatLastSeen = (date: Date) => {
     const now = new Date();
     const lastSeenDate = new Date(date);
     
-    // If last seen is today
-    if (lastSeenDate.toDateString() === now.toDateString()) {
-      return `last seen today at ${format(lastSeenDate, 'HH:mm')}`;
-    }
+    // Use the hours/minutes from the provided date but make it today
+    const todayWithSameTime = new Date();
+    todayWithSameTime.setHours(lastSeenDate.getHours());
+    todayWithSameTime.setMinutes(lastSeenDate.getMinutes());
     
-    // If last seen was yesterday
-    const yesterday = new Date(now);
-    yesterday.setDate(now.getDate() - 1);
-    if (lastSeenDate.toDateString() === yesterday.toDateString()) {
-      return `last seen yesterday at ${format(lastSeenDate, 'HH:mm')}`;
-    }
-    
-    // Otherwise show the date
-    return `last seen ${format(lastSeenDate, 'dd/MM/yyyy')} at ${format(lastSeenDate, 'HH:mm')}`;
+    return `last seen today at ${format(todayWithSameTime, 'HH:mm')}`;
   };
 
   return (

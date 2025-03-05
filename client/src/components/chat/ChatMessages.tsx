@@ -17,16 +17,14 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ messages, currentUserId, pa
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Group messages by date
+  // Group messages by date - always show as today
   const messagesByDate: { [date: string]: Message[] } = {};
   
-  messages.forEach(message => {
-    const date = format(new Date(message.createdAt), 'EEE dd MMM');
-    if (!messagesByDate[date]) {
-      messagesByDate[date] = [];
-    }
-    messagesByDate[date].push(message);
-  });
+  // Get today's formatted date
+  const today = format(new Date(), 'EEE dd MMM');
+  
+  // Put all messages under today's date
+  messagesByDate[today] = [...messages];
 
   // Find a sender in the participants list
   const findSender = (senderId: number): User | undefined => {
