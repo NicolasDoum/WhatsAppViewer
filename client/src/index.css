@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Open Sans', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    overflow: hidden;
+    height: 100vh;
+  }
+}
+
+/* WhatsApp custom colors */
+:root {
+  --whatsapp-green: #25D366;
+  --whatsapp-dark-green: #075E54;
+  --whatsapp-light-green: #DCF8C6;
+  --whatsapp-teal: #128C7E;
+  --whatsapp-blue: #34B7F1;
+  --whatsapp-grey: #ECE5DD;
+  --whatsapp-chat-bg: #E5DDD5;
+  --whatsapp-card-bg: #FFFFFF;
+  --whatsapp-sidebar-bg: #F0F2F5;
+  --whatsapp-light-text: #909090;
+  --whatsapp-dark-text: #303030;
+}
+
+/* Chat background pattern */
+.chat-background {
+  background-color: var(--whatsapp-chat-bg);
+  background-image: url("./assets/chat-bg-pattern.svg");
+}
+
+/* Custom scrollbar */
+.scrollbar-custom::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+/* Message bubbles styling */
+.message-outgoing {
+  background-color: var(--whatsapp-light-green);
+  position: relative;
+}
+
+.message-outgoing:after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 8px solid var(--whatsapp-light-green);
+  border-right: 8px solid transparent;
+}
+
+.message-incoming {
+  background-color: white;
+  position: relative;
+}
+
+.message-incoming:after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 8px solid white;
+  border-left: 8px solid transparent;
+}
