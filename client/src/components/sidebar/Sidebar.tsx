@@ -38,6 +38,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         activeConversationId={activeConversationId} 
         onSelectConversation={onSelectConversation}
         currentUserId={currentUser.id}
+        readConversations={readConversations}
       />
     </div>
   );

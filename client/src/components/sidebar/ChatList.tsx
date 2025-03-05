@@ -7,13 +7,15 @@ interface ChatListProps {
   activeConversationId: number | null;
   onSelectConversation: (conversationId: number) => void;
   currentUserId: number;
+  readConversations: Set<number>;
 }
 
 const ChatList: React.FC<ChatListProps> = ({ 
   conversations, 
   activeConversationId, 
   onSelectConversation,
-  currentUserId
+  currentUserId,
+  readConversations
 }) => {
   return (
     <div className="overflow-y-auto flex-1 scrollbar-custom">
@@ -22,6 +24,7 @@ const ChatList: React.FC<ChatListProps> = ({
           key={conversation.id}
           conversation={conversation}
           isActive={activeConversationId === conversation.id}
+          isRead={readConversations.has(conversation.id)}
           onClick={() => onSelectConversation(conversation.id)}
           currentUserId={currentUserId}
         />

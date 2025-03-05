@@ -5,13 +5,15 @@ import { format } from 'date-fns';
 interface ChatListItemProps {
   conversation: Conversation;
   isActive: boolean;
+  isRead: boolean;
   onClick: () => void;
   currentUserId: number;
 }
 
 const ChatListItem: React.FC<ChatListItemProps> = ({ 
   conversation, 
-  isActive, 
+  isActive,
+  isRead,
   onClick,
   currentUserId
 }) => {
@@ -57,8 +59,8 @@ const ChatListItem: React.FC<ChatListItemProps> = ({
     }
   };
   
-  // Only show unread count if the conversation is not active and not in the list of read conversations
-  const unreadCount = isActive ? 0 : getUnreadCount(conversation.id);
+  // Only show unread count if the conversation is not active and not previously read
+  const unreadCount = isActive || isRead ? 0 : getUnreadCount(conversation.id);
 
   return (
     <div 
