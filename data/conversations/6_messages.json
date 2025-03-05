@@ -1,0 +1,38 @@
+[
+  {
+    "conversationId": 6,
+    "senderId": 4,
+    "type": "text",
+    "content": "Hello! This is Nicolas. I wanted to test the file-based conversation system.",
+    "status": "read",
+    "id": 9,
+    "createdAt": "2025-03-05T20:26:06.180Z"
+  },
+  {
+    "conversationId": 6,
+    "senderId": 5,
+    "type": "text",
+    "content": "Hi Nicolas! Yes, this is working great - I just created this conversation by adding a JSON file to the folder.",
+    "status": "read",
+    "id": 10,
+    "createdAt": "2025-03-05T20:26:06.261Z"
+  },
+  {
+    "conversationId": 6,
+    "senderId": 4,
+    "type": "text",
+    "content": "That's fantastic! So simple to use.",
+    "status": "read",
+    "id": 11,
+    "createdAt": "2025-03-05T20:26:06.934Z"
+  },
+  {
+    "conversationId": 6,
+    "senderId": 4,
+    "type": "text",
+    "content": "No need for any complex API calls or anything like that!",
+    "status": "read",
+    "id": 12,
+    "createdAt": "2025-03-05T20:26:08.718Z"
+  }
+]
