@@ -9,13 +9,15 @@ interface SidebarProps {
   conversations: Conversation[];
   activeConversationId: number | null;
   onSelectConversation: (conversationId: number) => void;
+  readConversations: Set<number>;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ 
   currentUser, 
   conversations, 
   activeConversationId, 
-  onSelectConversation 
+  onSelectConversation,
+  readConversations
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   

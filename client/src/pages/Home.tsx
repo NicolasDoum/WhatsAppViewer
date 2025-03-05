@@ -9,6 +9,18 @@ import { mockUsers, mockConversations, getMockMessagesForConversation, currentUs
 const Home: React.FC = () => {
   const queryClient = useQueryClient();
   const [activeConversationId, setActiveConversationId] = useState<number | null>(null);
+  // Track which conversations have been read in this session
+  const [readConversations, setReadConversations] = useState<Set<number>>(new Set());
+
+  // Function to handle conversation selection and mark as read
+  const handleSelectConversation = (conversationId: number) => {
+    setActiveConversationId(conversationId);
+    setReadConversations(prev => {
+      const newSet = new Set(prev);
+      newSet.add(conversationId);
+      return newSet;
+    });
+  };
 
   // Fetch current user data
   const { data: currentUser } = useQuery<User>({
@@ -145,7 +157,8 @@ const Home: React.FC = () => {
         currentUser={currentUser}
         conversations={conversations}
         activeConversationId={activeConversationId}
-        onSelectConversation={setActiveConversationId}
+        onSelectConversation={handleSelectConversation}
+        readConversations={readConversations}
       />
       
       {activeConversation ? (

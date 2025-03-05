@@ -46,9 +46,19 @@ const ChatListItem: React.FC<ChatListItemProps> = ({
     return '';
   };
 
-  // Determine if the message is unread (just for demonstration - in a real app we'd track this)
-  const hasUnreadMessages = Math.random() > 0.7; // Randomly show unread messages
-  const unreadCount = hasUnreadMessages ? Math.floor(Math.random() * 3) + 1 : 0;
+  // Determine unread count based on conversation id - consistent value per conversation
+  const getUnreadCount = (id: number): number => {
+    switch (id) {
+      case 1: return 2;
+      case 2: return 4;
+      case 3: return 1;
+      case 4: return 3;
+      default: return 0;
+    }
+  };
+  
+  // Only show unread count if the conversation is not active and not in the list of read conversations
+  const unreadCount = isActive ? 0 : getUnreadCount(conversation.id);
 
   return (
     <div 
