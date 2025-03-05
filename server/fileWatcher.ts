@@ -1,4 +1,5 @@
-import fs from 'fs/promises';
+import fs from 'fs';
+import fsPromises from 'fs/promises';
 import path from 'path';
 import chokidar from 'chokidar';
 import { fileStorage } from './fileStorage';
@@ -10,7 +11,7 @@ const NEW_CONVERSATIONS_DIR = path.join(process.cwd(), 'data', 'new-conversation
 // Make sure the directory exists
 async function ensureDirectoryExists() {
   try {
-    await fs.mkdir(NEW_CONVERSATIONS_DIR, { recursive: true });
+    await fsPromises.mkdir(NEW_CONVERSATIONS_DIR, { recursive: true });
     console.log(`Watching for new conversation files in: ${NEW_CONVERSATIONS_DIR}`);
   } catch (error) {
     console.error('Error creating directory:', error);
@@ -23,7 +24,7 @@ async function processConversationFile(filePath: string) {
     console.log(`Processing new conversation file: ${filePath}`);
     
     // Read the file
-    const fileContent = await fs.readFile(filePath, 'utf-8');
+    const fileContent = await fsPromises.readFile(filePath, 'utf-8');
     const data = JSON.parse(fileContent);
     
     // Create a new conversation
@@ -66,11 +67,11 @@ async function processConversationFile(filePath: string) {
     
     // Move the file to a processed directory to avoid reprocessing
     const processedDir = path.join(path.dirname(filePath), 'processed');
-    await fs.mkdir(processedDir, { recursive: true });
+    await fsPromises.mkdir(processedDir, { recursive: true });
     
     const fileName = path.basename(filePath);
     const newFilePath = path.join(processedDir, `${fileName}.processed-${Date.now()}`);
-    await fs.rename(filePath, newFilePath);
+    await fsPromises.rename(filePath, newFilePath);
     
     console.log(`Conversation file processed and moved to: ${newFilePath}`);
     return conversation;
@@ -80,21 +81,52 @@ async function processConversationFile(filePath: string) {
   }
 }
 
-export function startFileWatcher() {
+export async function startFileWatcher() {
   // Create the directory if it doesn't exist
-  ensureDirectoryExists();
+  await ensureDirectoryExists();
   
   // Set up file watcher
   const watcher = chokidar.watch(`${NEW_CONVERSATIONS_DIR}/*.json`, {
-    ignored: /(^|[\/\\])\../, // Ignore dotfiles
+    ignored: [/(^|[\/\\])\./, /processed/], // Ignore dotfiles and processed directory
     persistent: true,
     ignoreInitial: false, // Process existing files on startup
+    awaitWriteFinish: {
+      stabilityThreshold: 2000, // Wait 2 seconds after last write
+      pollInterval: 100
+    }
   });
+  
+  // Process any existing files first
+  const files = fs.readdirSync(NEW_CONVERSATIONS_DIR);
+  console.log(`Found ${files.length} files in the directory. Processing...`);
+  
+  for (const file of files) {
+    if (file.endsWith('.json') && 
+        !file.includes('template') && 
+        !file.includes('processed') && 
+        file !== 'conversation-template.json' && 
+        file !== 'sample-template.json' &&
+        file !== 'README.md') {
+      
+      const filePath = path.join(NEW_CONVERSATIONS_DIR, file);
+      console.log(`Processing existing file: ${filePath}`);
+      try {
+        await processConversationFile(filePath);
+      } catch (error) {
+        console.error(`Error processing file ${file}:`, error);
+      }
+    }
+  }
   
   // When a new file is added
   watcher.on('add', async (filePath) => {
-    // Check if this is in a processed subdirectory
-    if (filePath.includes('processed')) {
+    // Skip template files and files in processed directory
+    if (filePath.includes('processed') || 
+        filePath.includes('template') || 
+        path.basename(filePath) === 'conversation-template.json' || 
+        path.basename(filePath) === 'sample-template.json' ||
+        path.basename(filePath) === 'README.md') {
+      console.log(`Skipping template file: ${filePath}`);
       return;
     }
     
@@ -112,7 +144,7 @@ export async function createSimpleConversationTemplate() {
   
   // Check if template already exists
   try {
-    await fs.access(templatePath);
+    await fsPromises.access(templatePath, fs.constants.F_OK);
     console.log('Template already exists, skipping creation');
     return;
   } catch (error) {
@@ -140,6 +172,6 @@ export async function createSimpleConversationTemplate() {
     ]
   };
   
-  await fs.writeFile(templatePath, JSON.stringify(template, null, 2));
+  await fsPromises.writeFile(templatePath, JSON.stringify(template, null, 2));
   console.log(`Created conversation template at: ${templatePath}`);
 }

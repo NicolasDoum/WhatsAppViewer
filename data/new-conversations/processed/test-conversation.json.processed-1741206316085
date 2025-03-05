@@ -1,0 +1,26 @@
+{
+  "participants": [
+    { "userId": 3 },
+    { "userId": 5 }
+  ],
+  "messages": [
+    {
+      "senderId": 3,
+      "type": "text",
+      "content": "Hello! This is Madeleine Lee reaching out to test the file-based conversation system.",
+      "status": "read"
+    },
+    {
+      "senderId": 5,
+      "type": "text",
+      "content": "Hi Madeleine! It's working great! I just created this conversation by adding a JSON file.",
+      "status": "read"
+    },
+    {
+      "senderId": 3,
+      "type": "text",
+      "content": "That's perfect! No need for APIs or anything complex. Just add a file and it works!",
+      "status": "read"
+    }
+  ]
+}
