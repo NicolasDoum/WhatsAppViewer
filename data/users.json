@@ -31,7 +31,7 @@
     "id": 5,
     "username": "currentUser",
     "displayName": "Current User",
-    "avatar": "public/MadeleinePort.jpg",
+    "avatar": "/MadeleinePort.jpg",
     "lastSeen": "2025-03-05T20:17:25.856Z"
   }
 ]
