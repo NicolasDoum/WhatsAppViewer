@@ -36,8 +36,6 @@ const ChatView: React.FC<ChatViewProps> = ({
         currentUserId={currentUser.id}
         participants={activeConversation.participants || []}
       />
-      
-      <MessageInput onSendMessage={onSendMessage} />
     </div>
   );
 };

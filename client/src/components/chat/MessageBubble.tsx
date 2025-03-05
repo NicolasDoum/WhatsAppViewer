@@ -88,8 +88,8 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message, isCurrentUser, s
     <div className={`flex mb-3 ${isCurrentUser ? 'justify-end' : ''}`}>
       <div 
         className={`
-          ${isCurrentUser ? 'message-outgoing bg-whatsapp-light-green' : 'message-incoming bg-white'} 
-          rounded-lg p-3 max-w-[70%] shadow-sm relative
+          ${isCurrentUser ? 'bg-whatsapp-light-green' : 'bg-white'} 
+          rounded-lg p-3 max-w-[70%] shadow-sm
         `}
       >
         {renderMessageContent()}
