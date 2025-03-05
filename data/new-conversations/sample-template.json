@@ -1,0 +1,26 @@
+{
+  "participants": [
+    { "userId": 1 },
+    { "userId": 5 }
+  ],
+  "messages": [
+    {
+      "senderId": 1,
+      "type": "text",
+      "content": "Hello! This is a sample message from Fabian.",
+      "status": "read"
+    },
+    {
+      "senderId": 5,
+      "type": "text",
+      "content": "Hi Fabian! I created this conversation by adding a file to the folder.",
+      "status": "read"
+    },
+    {
+      "senderId": 1,
+      "type": "text",
+      "content": "That's awesome! It's so easy to create conversations this way.",
+      "status": "read"
+    }
+  ]
+}

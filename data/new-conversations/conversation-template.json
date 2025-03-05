@@ -1,0 +1,24 @@
+{
+  "participants": [
+    {
+      "userId": 1
+    },
+    {
+      "userId": 5
+    }
+  ],
+  "messages": [
+    {
+      "senderId": 1,
+      "type": "text",
+      "content": "Hello! This is a new conversation.",
+      "status": "read"
+    },
+    {
+      "senderId": 5,
+      "type": "text",
+      "content": "Hi! I created this by simply adding a file to the new-conversations folder!",
+      "status": "read"
+    }
+  ]
+}
