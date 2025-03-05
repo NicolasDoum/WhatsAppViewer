@@ -1,0 +1,37 @@
+{
+  "conversation": {
+    "id": 999,
+    "lastMessageAt": "2025-03-05T20:17:25.862Z"
+  },
+  "participants": [
+    {
+      "userId": 1
+    },
+    {
+      "userId": 5
+    }
+  ],
+  "messages": [
+    {
+      "senderId": 1,
+      "type": "text",
+      "content": "Hello! This is a sample conversation from a file",
+      "status": "read"
+    },
+    {
+      "senderId": 5,
+      "type": "text",
+      "content": "Wow, this is cool! I can create conversations from files",
+      "status": "read"
+    },
+    {
+      "senderId": 1,
+      "type": "image",
+      "content": "https://images.unsplash.com/photo-1601513237233-bd526fc3f66e",
+      "metadata": {
+        "caption": "Check out this awesome image!"
+      },
+      "status": "read"
+    }
+  ]
+}

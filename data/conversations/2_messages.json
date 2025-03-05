@@ -1,0 +1,11 @@
+[
+  {
+    "id": 3,
+    "conversationId": 2,
+    "senderId": 5,
+    "type": "text",
+    "content": "Management is doing things right...",
+    "createdAt": "2025-03-03T20:17:25.861Z",
+    "status": "read"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "conversationId": 1
+  },
+  {
+    "id": 2,
+    "userId": 5,
+    "conversationId": 1
+  },
+  {
+    "id": 3,
+    "userId": 2,
+    "conversationId": 2
+  },
+  {
+    "id": 4,
+    "userId": 5,
+    "conversationId": 2
+  },
+  {
+    "id": 5,
+    "userId": 3,
+    "conversationId": 3
+  },
+  {
+    "id": 6,
+    "userId": 5,
+    "conversationId": 3
+  },
+  {
+    "id": 7,
+    "userId": 4,
+    "conversationId": 4
+  },
+  {
+    "id": 8,
+    "userId": 5,
+    "conversationId": 4
+  }
+]

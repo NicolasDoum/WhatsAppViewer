@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "conversationId": 1,
+    "senderId": 1,
+    "type": "text",
+    "content": "Acha question. Nicolas était un employeur avec Arnaud et ils ont discuté d'une idée que ai modifiée la semaine. Nicolas a suggéré à Arnaud d'utiliser les consultants directs chez ABS France et ABS jhi d'explorer la comptabilité d'utiliser des consultants qui sont dans les entreprises partenaires.",
+    "createdAt": "2025-03-05T18:03:25.860Z",
+    "status": "read"
+  },
+  {
+    "id": 2,
+    "conversationId": 1,
+    "senderId": 5,
+    "type": "text",
+    "content": "I ain't reading all that\nI'm happy for u tho\nor sorry that happened",
+    "metadata": {
+      "isQuote": true
+    },
+    "createdAt": "2025-03-05T18:07:25.860Z",
+    "status": "read"
+  }
+]

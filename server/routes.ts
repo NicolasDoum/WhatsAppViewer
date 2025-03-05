@@ -1,6 +1,8 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
+// import { storage } from "./storage";
+import { fileStorage as storage } from "./fileStorage";
+import { ConversationManager } from "./conversationManager";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // HTTP Server for potential WebSocket usage later
@@ -116,6 +118,69 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(updatedMessage);
     } catch (error) {
       res.status(500).json({ message: "Error updating message status" });
+    }
+  });
+
+  // Conversation manager is now imported at the top of the file
+
+  // Load a conversation from a file
+  app.post("/api/conversations/load-from-file", async (req, res) => {
+    try {
+      const { filename } = req.body;
+      
+      if (!filename) {
+        return res.status(400).json({ message: "Filename is required" });
+      }
+      
+      const conversation = await ConversationManager.loadConversationFromFile(filename);
+      
+      if (!conversation) {
+        return res.status(404).json({ message: "Failed to load conversation from file" });
+      }
+      
+      res.json(conversation);
+    } catch (error) {
+      console.error("Error loading conversation from file:", error);
+      res.status(500).json({ message: "Error loading conversation from file" });
+    }
+  });
+
+  // Create a new conversation
+  app.post("/api/conversations", async (req, res) => {
+    try {
+      const { participantUserIds } = req.body;
+      
+      if (!participantUserIds || !Array.isArray(participantUserIds) || participantUserIds.length === 0) {
+        return res.status(400).json({ message: "Participant user IDs are required" });
+      }
+      
+      const conversation = await ConversationManager.createConversation(participantUserIds);
+      res.status(201).json(conversation);
+    } catch (error) {
+      console.error("Error creating conversation:", error);
+      res.status(500).json({ message: "Error creating conversation" });
+    }
+  });
+
+  // Add a message to a conversation
+  app.post("/api/conversations/:id/messages", async (req, res) => {
+    try {
+      const conversationId = parseInt(req.params.id, 10);
+      const { senderId, type, content, metadata } = req.body;
+      
+      if (!senderId || !type || !content) {
+        return res.status(400).json({ message: "Sender ID, type, and content are required" });
+      }
+      
+      if (!['text', 'image', 'audio'].includes(type)) {
+        return res.status(400).json({ message: "Type must be 'text', 'image', or 'audio'" });
+      }
+      
+      const message = await ConversationManager.addMessage(conversationId, senderId, type, content, metadata);
+      res.status(201).json(message);
+    } catch (error) {
+      console.error("Error adding message:", error);
+      res.status(500).json({ message: "Error adding message" });
     }
   });
 

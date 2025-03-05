@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "username": "fabian",
+    "displayName": "Fabian",
+    "avatar": "https://images.unsplash.com/photo-1599566150163-29194dcaad36",
+    "lastSeen": "2025-03-05T20:17:25.856Z"
+  },
+  {
+    "id": 2,
+    "username": "peter",
+    "displayName": "Peter Drucker",
+    "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61",
+    "lastSeen": "2025-03-05T19:17:25.856Z"
+  },
+  {
+    "id": 3,
+    "username": "madeleine",
+    "displayName": "Madeleine Ythu",
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+    "lastSeen": "2025-03-04T20:17:25.856Z"
+  },
+  {
+    "id": 4,
+    "username": "nicolas",
+    "displayName": "Nicolas Domenech",
+    "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e",
+    "lastSeen": "2025-03-05T18:17:25.856Z"
+  },
+  {
+    "id": 5,
+    "username": "currentUser",
+    "displayName": "Current User",
+    "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde",
+    "lastSeen": "2025-03-05T20:17:25.856Z"
+  }
+]
