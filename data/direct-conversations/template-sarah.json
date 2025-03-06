@@ -1,0 +1,33 @@
+{
+  "id": 6,
+  "lastMessageAt": "2025-03-06T13:00:25.520Z",
+  "participant": {
+    "id": 6,
+    "username": "sarah",
+    "displayName": "Sarah Johnson",
+    "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956",
+    "lastSeen": "2025-03-06T12:00:00.000Z"
+  },
+  "messages": [
+    {
+      "id": 1,
+      "conversationId": 6,
+      "senderId": 6,
+      "type": "text",
+      "content": "Hello! This is a template conversation with Sarah Johnson.",
+      "metadata": {},
+      "createdAt": "2025-03-06T12:00:25.520Z",
+      "status": "read"
+    },
+    {
+      "id": 2,
+      "conversationId": 6,
+      "senderId": 5,
+      "type": "text",
+      "content": "Hi! Just edit this file to create a new conversation.",
+      "metadata": {},
+      "createdAt": "2025-03-06T13:00:25.520Z",
+      "status": "read"
+    }
+  ]
+}

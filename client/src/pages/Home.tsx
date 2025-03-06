@@ -21,50 +21,83 @@ const Home: React.FC = () => {
     });
   };
 
+  // Use direct file-based API (optional feature flag)
+  const USE_DIRECT_API = true;
+  const baseApiUrl = USE_DIRECT_API ? '/api/direct' : '/api';
+
   // Fetch current user data
   const { data: currentUser } = useQuery<User>({
-    queryKey: ['/api/me'],
+    queryKey: [baseApiUrl + '/me'],
     queryFn: async () => {
       try {
-        const res = await fetch('/api/me');
+        // Try the direct API first
+        const res = await fetch(baseApiUrl + '/me');
         if (!res.ok) throw new Error('Failed to fetch current user');
         return await res.json();
       } catch (error) {
         console.error('Error fetching current user:', error);
-        return mockCurrentUser; // Fallback to mock data
+        
+        // If direct API fails, try the regular API
+        if (USE_DIRECT_API) {
+          try {
+            const fallbackRes = await fetch('/api/me');
+            if (fallbackRes.ok) return fallbackRes.json();
+          } catch {}
+        }
+        
+        return mockCurrentUser; // Final fallback to mock data
       }
     }
   });
 
   // Fetch all conversations
   const { data: conversations } = useQuery<Conversation[]>({
-    queryKey: ['/api/conversations'],
+    queryKey: [baseApiUrl + '/conversations'],
     queryFn: async () => {
       try {
-        const res = await fetch('/api/conversations');
+        // Try the direct API first
+        const res = await fetch(baseApiUrl + '/conversations');
         if (!res.ok) throw new Error('Failed to fetch conversations');
         return await res.json();
       } catch (error) {
         console.error('Error fetching conversations:', error);
-        return mockConversations; // Fallback to mock data
+        
+        // If direct API fails, try the regular API
+        if (USE_DIRECT_API) {
+          try {
+            const fallbackRes = await fetch('/api/conversations');
+            if (fallbackRes.ok) return fallbackRes.json();
+          } catch {}
+        }
+        
+        return mockConversations; // Final fallback to mock data
       }
     }
   });
 
   // Fetch active conversation with messages
   const { data: activeConversation } = useQuery<ActiveConversation>({
-    queryKey: ['/api/conversations', activeConversationId],
+    queryKey: [baseApiUrl + '/conversations', activeConversationId],
     queryFn: async () => {
       if (!activeConversationId) {
         throw new Error('No conversation selected');
       }
       
       try {
-        const res = await fetch(`/api/conversations/${activeConversationId}`);
+        // Try the direct API first
+        const res = await fetch(`${baseApiUrl}/conversations/${activeConversationId}`);
         if (!res.ok) throw new Error('Failed to fetch conversation');
         return await res.json();
       } catch (error) {
         console.error('Error fetching conversation:', error);
+        
+        // If direct API fails, try the regular API
+        if (USE_DIRECT_API) {
+          try {
+            const fallbackRes = await fetch(`/api/conversations/${activeConversationId}`);
+            if (fallbackRes.ok) return fallbackRes.json();
+          } catch {}
+        }
         
         // Fallback to mock data
         const conversation = mockConversations.find(c => c.id === activeConversationId);

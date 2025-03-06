@@ -5,6 +5,8 @@ import { startFileWatcher, createSimpleConversationTemplate } from "./fileWatche
 import { startSimpleFileWatcher, createSimpleConversationTemplate as createSimpleTemplate, createSimpleSampleConversations } from "./simpleFileWatcher";
 import { registerSimpleRoutes } from "./simpleRoutes";
 import { SimpleConversationManager } from "./simpleConversationManager";
+import { registerDirectRoutes } from "./directRoutes";
+import { createConversationTemplate, createSampleConversations } from "./directConversationLoader";
 
 const app = express();
 app.use(express.json());
@@ -55,6 +57,9 @@ console.log('Instead of /public/MadeleinePort.jpg, use /MadeleinePort.jpg.');
   
   // Register our new simplified routes
   await registerSimpleRoutes(app);
+  
+  // Register the direct file-based conversation routes
+  await registerDirectRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
@@ -93,5 +98,9 @@ console.log('Instead of /public/MadeleinePort.jpg, use /MadeleinePort.jpg.');
     
     // Create sample conversations with each user
     await createSimpleSampleConversations();
+    
+    // Create direct file-based conversations and templates
+    await createConversationTemplate();
+    await createSampleConversations();
   });
 })();

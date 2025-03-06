@@ -60,7 +60,16 @@ export async function loadAllConversations(): Promise<DirectConversation[]> {
         // Fix dates
         conversation.lastMessageAt = new Date(conversation.lastMessageAt);
         conversation.messages.forEach((message: Message) => {
-          message.createdAt = new Date(message.createdAt);
+          // Ensure we never have null dates
+          if (message.createdAt === null) {
+            message.createdAt = new Date();
+          } else {
+            message.createdAt = new Date(message.createdAt);
+          }
+          // Ensure message has metadata
+          if (!message.metadata) {
+            message.metadata = {};
+          }
         });
         
         conversations.push(conversation);
@@ -81,6 +90,9 @@ export async function loadAllConversations(): Promise<DirectConversation[]> {
 
 // Create conversation template
 export async function createConversationTemplate() {
+  // Make sure the directory exists
+  await ensureDirectoryExists();
+  
   const users = await loadUsers();
   const currentUser = users.find(user => user.id === 5);
   
@@ -117,6 +129,7 @@ export async function createConversationTemplate() {
           senderId: user.id,
           type: 'text',
           content: `Hello! This is a template conversation with ${user.displayName}.`,
+          metadata: {},
           createdAt: new Date(now.getTime() - 3600000), // 1 hour ago
           status: 'read'
         },
@@ -126,6 +139,7 @@ export async function createConversationTemplate() {
           senderId: 5, // Current user
           type: 'text',
           content: 'Hi! Just edit this file to create a new conversation.',
+          metadata: {},
           createdAt: now,
           status: 'read'
         }
@@ -139,6 +153,9 @@ export async function createConversationTemplate() {
 
 // Create a conversation by copying and modifying the template
 export async function createSampleConversation(userId: number, conversationId: number): Promise<DirectConversation | null> {
+  // Make sure the directory exists
+  await ensureDirectoryExists();
+  
   const users = await loadUsers();
   const participant = users.find(user => user.id === userId);
   
@@ -159,6 +176,7 @@ export async function createSampleConversation(userId: number, conversationId: n
         senderId: userId,
         type: 'text',
         content: `Hello! This is a sample conversation with ${participant.displayName}.`,
+        metadata: {},
         createdAt: new Date(now.getTime() - 3600000), // 1 hour ago
         status: 'read'
       },
@@ -168,6 +186,7 @@ export async function createSampleConversation(userId: number, conversationId: n
         senderId: 5, // Current user
         type: 'text',
         content: 'Hi there! This is a new direct conversation system.',
+        metadata: {},
         createdAt: new Date(now.getTime() - 1800000), // 30 minutes ago
         status: 'read'
       },
@@ -177,6 +196,7 @@ export async function createSampleConversation(userId: number, conversationId: n
         senderId: userId,
         type: 'text',
         content: 'It looks great! No API calls needed to create conversations.',
+        metadata: {},
         createdAt: now,
         status: 'read'
       }
