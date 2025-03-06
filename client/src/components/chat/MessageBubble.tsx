@@ -1,6 +1,6 @@
 import React from 'react';
 import { Message, User } from '@/types';
-import { formatDate } from '@/lib/utils';
+import { format } from 'date-fns';
 import AudioPlayer from './AudioPlayer';
 
 interface MessageBubbleProps {
@@ -10,6 +10,9 @@ interface MessageBubbleProps {
 }
 
 const MessageBubble: React.FC<MessageBubbleProps> = ({ message, isCurrentUser, sender }) => {
+  const formatMessageTime = (date: Date) => {
+    return format(new Date(date), 'HH:mm');
+  };
 
   // Determine message content based on type
   const renderMessageContent = () => {
@@ -92,7 +95,7 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message, isCurrentUser, s
         {renderMessageContent()}
         <div className="flex justify-end items-center mt-1">
           <span className="text-xs text-gray-500 mr-1">
-            {formatDate(message.createdAt)}
+            {formatMessageTime(message.createdAt)}
           </span>
           {renderMessageStatus()}
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Conversation, User } from '@/types';
-import { formatDate } from '@/lib/utils';
+import { format } from 'date-fns';
 
 interface ChatListItemProps {
   conversation: Conversation;
@@ -19,6 +19,14 @@ const ChatListItem: React.FC<ChatListItemProps> = ({
 }) => {
   // Get the participant (not the current user)
   const otherParticipant: User = conversation.participant;
+
+  // Format the last message time - always show as today's time
+  const formatMessageTime = (date: Date) => {
+    const messageDate = new Date(date);
+    
+    // Just show the time (hours:minutes)
+    return format(messageDate, 'HH:mm');
+  };
 
   // Get last message preview text
   const getLastMessagePreview = () => {
@@ -68,7 +76,7 @@ const ChatListItem: React.FC<ChatListItemProps> = ({
         <div className="flex justify-between">
           <h3 className="text-md font-semibold text-gray-800">{otherParticipant.displayName}</h3>
           <span className="text-xs text-gray-500">
-            {conversation.lastMessageAt ? formatDate(conversation.lastMessageAt) : ''}
+            {conversation.lastMessageAt ? formatMessageTime(conversation.lastMessageAt) : ''}
           </span>
         </div>
         <div className="flex items-center">
