@@ -1,0 +1,43 @@
+{
+  "id": 2,
+  "lastMessageAt": "2025-03-06T13:31:00.409Z",
+  "participant": {
+    "id": 2,
+    "username": "peter",
+    "displayName": "Peter Drucker",
+    "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61",
+    "lastSeen": "2025-03-05T19:17:25.856Z"
+  },
+  "messages": [
+    {
+      "id": 1,
+      "conversationId": 2,
+      "senderId": 2,
+      "type": "text",
+      "content": "Hello! This is a sample conversation with Peter Drucker.",
+      "metadata": {},
+      "createdAt": "2025-03-06T12:31:00.409Z",
+      "status": "read"
+    },
+    {
+      "id": 2,
+      "conversationId": 2,
+      "senderId": 5,
+      "type": "text",
+      "content": "Hi there! This is a new direct conversation system.",
+      "metadata": {},
+      "createdAt": "2025-03-06T13:01:00.409Z",
+      "status": "read"
+    },
+    {
+      "id": 3,
+      "conversationId": 2,
+      "senderId": 2,
+      "type": "text",
+      "content": "It looks great! No API calls needed to create conversations.",
+      "metadata": {},
+      "createdAt": "2025-03-06T13:31:00.409Z",
+      "status": "read"
+    }
+  ]
+}

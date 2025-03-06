@@ -1,23 +1,40 @@
 import React from 'react';
 import { User } from '@/types';
-import { format } from 'date-fns';
+import { formatDate } from '@/lib/utils';
 
 interface ChatHeaderProps {
   participant: User;
 }
 
 const ChatHeader: React.FC<ChatHeaderProps> = ({ participant }) => {
-  // Format the last seen time - always show as today
+  // Format the last seen time
   const formatLastSeen = (date: Date) => {
-    const now = new Date();
     const lastSeenDate = new Date(date);
+    const now = new Date();
+    const yesterday = new Date(now);
+    yesterday.setDate(yesterday.getDate() - 1);
     
-    // Use the hours/minutes from the provided date but make it today
-    const todayWithSameTime = new Date();
-    todayWithSameTime.setHours(lastSeenDate.getHours());
-    todayWithSameTime.setMinutes(lastSeenDate.getMinutes());
+    // Get formatted time from our util function
+    const formattedTime = formatDate(lastSeenDate);
     
-    return `last seen today at ${format(todayWithSameTime, 'HH:mm')}`;
+    // Same day
+    if (lastSeenDate.toDateString() === now.toDateString()) {
+      return `last seen today at ${lastSeenDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+    }
+    
+    // Yesterday
+    if (lastSeenDate.toDateString() === yesterday.toDateString()) {
+      return `last seen yesterday at ${lastSeenDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+    }
+    
+    // Within the last 7 days
+    const daysDiff = Math.floor((now.getTime() - lastSeenDate.getTime()) / (1000 * 60 * 60 * 24));
+    if (daysDiff < 7) {
+      return `last seen ${lastSeenDate.toLocaleDateString([], { weekday: 'long' })} at ${lastSeenDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+    }
+    
+    // Older last seen
+    return `last seen ${formattedTime}`;
   };
 
   return (

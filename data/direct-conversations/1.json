@@ -1,0 +1,43 @@
+{
+  "id": 1,
+  "lastMessageAt": "2025-03-06T13:30:59.418Z",
+  "participant": {
+    "id": 1,
+    "username": "Fabien",
+    "displayName": "Fabien",
+    "avatar": "https://i.ibb.co/vCcBv66D/Fabienport.png",
+    "lastSeen": "2025-03-05T20:17:25.856Z"
+  },
+  "messages": [
+    {
+      "id": 1,
+      "conversationId": 1,
+      "senderId": 1,
+      "type": "text",
+      "content": "Hello! This is a sample conversation with Fabien.",
+      "metadata": {},
+      "createdAt": "2025-03-06T12:30:59.418Z",
+      "status": "read"
+    },
+    {
+      "id": 2,
+      "conversationId": 1,
+      "senderId": 5,
+      "type": "text",
+      "content": "Hi there! This is a new direct conversation system.",
+      "metadata": {},
+      "createdAt": "2025-03-06T13:00:59.418Z",
+      "status": "read"
+    },
+    {
+      "id": 3,
+      "conversationId": 1,
+      "senderId": 1,
+      "type": "text",
+      "content": "It looks great! No API calls needed to create conversations.",
+      "metadata": {},
+      "createdAt": "2025-03-06T13:30:59.418Z",
+      "status": "read"
+    }
+  ]
+}

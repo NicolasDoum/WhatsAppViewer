@@ -1,0 +1,43 @@
+{
+  "id": 5,
+  "lastMessageAt": "2025-03-06T13:31:00.486Z",
+  "participant": {
+    "id": 6,
+    "username": "sarah",
+    "displayName": "Sarah Johnson",
+    "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956",
+    "lastSeen": "2025-03-06T12:00:00.000Z"
+  },
+  "messages": [
+    {
+      "id": 1,
+      "conversationId": 5,
+      "senderId": 6,
+      "type": "text",
+      "content": "Hello! This is a sample conversation with Sarah Johnson.",
+      "metadata": {},
+      "createdAt": "2025-03-06T12:31:00.486Z",
+      "status": "read"
+    },
+    {
+      "id": 2,
+      "conversationId": 5,
+      "senderId": 5,
+      "type": "text",
+      "content": "Hi there! This is a new direct conversation system.",
+      "metadata": {},
+      "createdAt": "2025-03-06T13:01:00.486Z",
+      "status": "read"
+    },
+    {
+      "id": 3,
+      "conversationId": 5,
+      "senderId": 6,
+      "type": "text",
+      "content": "It looks great! No API calls needed to create conversations.",
+      "metadata": {},
+      "createdAt": "2025-03-06T13:31:00.486Z",
+      "status": "read"
+    }
+  ]
+}
