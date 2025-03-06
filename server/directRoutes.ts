@@ -1,5 +1,5 @@
 import { Express, Request, Response, NextFunction } from 'express';
-import { Server } from 'http';
+import { Server, createServer } from 'http';
 import fs from 'fs/promises';
 import path from 'path';
 import { 
@@ -12,7 +12,9 @@ const CONVERSATIONS_DIR = path.join(process.cwd(), 'data', 'direct-conversations
 const USERS_FILE = path.join(process.cwd(), 'data', 'users.json');
 
 // Register the direct conversation routes
-export async function registerDirectRoutes(app: Express): Promise<void> {
+export async function registerDirectRoutes(app: Express): Promise<Server> {
+  // Create an HTTP server
+  const server = createServer(app);
   // Get current user (always user with ID 5)
   app.get('/api/direct/me', async (req, res) => {
     try {
@@ -117,4 +119,6 @@ export async function registerDirectRoutes(app: Express): Promise<void> {
     console.error('API Error:', err);
     res.status(500).json({ message: 'Internal Server Error' });
   });
+  
+  return server;
 }

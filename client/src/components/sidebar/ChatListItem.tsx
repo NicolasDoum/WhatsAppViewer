@@ -17,14 +17,8 @@ const ChatListItem: React.FC<ChatListItemProps> = ({
   onClick,
   currentUserId
 }) => {
-  // Get the other participant (not the current user)
-  // Handle both formats: direct conversations with a single participant property
-  // and regular conversations with an array of participants
-  const otherParticipant: User | undefined = conversation.participant || conversation.participants?.[0];
-  
-  if (!otherParticipant) {
-    return null;
-  }
+  // Get the participant (not the current user)
+  const otherParticipant: User = conversation.participant;
 
   // Format the last message time - always show as today's time
   const formatMessageTime = (date: Date) => {
@@ -36,13 +30,11 @@ const ChatListItem: React.FC<ChatListItemProps> = ({
 
   // Get last message preview text
   const getLastMessagePreview = () => {
-    // Handle both formats: direct conversations with messages array
-    // and regular conversations with lastMessage property
-    const lastMessage = conversation.lastMessage || 
-      (conversation.messages && conversation.messages.length > 0 
-        ? conversation.messages[conversation.messages.length - 1] 
-        : null);
-        
+    // Get the latest message from the messages array
+    const lastMessage = conversation.messages.length > 0 
+      ? conversation.messages[conversation.messages.length - 1] 
+      : null;
+      
     if (!lastMessage) return '';
     
     if (lastMessage.type === 'text') {
@@ -88,7 +80,7 @@ const ChatListItem: React.FC<ChatListItemProps> = ({
           </span>
         </div>
         <div className="flex items-center">
-          {conversation.lastMessage?.senderId === currentUserId && (
+          {conversation.messages.length > 0 && conversation.messages[conversation.messages.length - 1].senderId === currentUserId && (
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34B7F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-1"><polyline points="20 6 9 17 4 12"></polyline></svg>
           )}
           <div className="text-sm text-gray-500 truncate w-52">{getLastMessagePreview()}</div>

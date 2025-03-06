@@ -10,11 +10,8 @@ export interface User {
 export interface Conversation {
   id: number;
   lastMessageAt: Date;
-  lastMessage?: Message;
-  // Support both formats:
-  participants?: User[];   // Original format: array of participants
-  participant?: User;      // Direct conversation format: single participant
-  messages?: Message[];    // Direct conversations include messages directly
+  participant: User;       // Direct conversation format with single participant
+  messages: Message[];     // Direct conversations include messages directly
 }
 
 export interface Message {
@@ -34,5 +31,6 @@ export interface Message {
 
 // UI and state types
 export interface ActiveConversation extends Conversation {
-  messages: Message[];
+  // This interface extends Conversation with the same structure
+  // Kept for backward compatibility if needed
 }
