@@ -16,14 +16,14 @@ const SidebarHeader: React.FC<SidebarHeaderProps> = ({ currentUser }) => {
   return (
     <div className="bg-whatsapp-sidebar-bg px-4 flex flex-col border-b border-gray-200">
       {/* Top part with avatar and icons */}
-      <div className="h-16 flex items-center justify-between">
+      <div className="h-20 flex items-center justify-between">
         <div className="flex items-center">
           <img 
             src={currentUser.avatar}
-            className="rounded-full w-10 h-10 mr-3"
+            className="rounded-full w-16 h-16 mr-3"
             alt="User profile"
           />
-          <span className="font-semibold text-gray-800">{userInfo.name}</span>
+          <span className="font-semibold text-gray-800 text-2xl">{userInfo.name}</span>
         </div>
         <div className="flex items-center text-gray-500 space-x-4">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>

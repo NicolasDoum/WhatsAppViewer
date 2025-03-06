@@ -1,6 +1,6 @@
 {
   "id": 1,
-  "lastMessageAt": "2025-03-06T15:35:41.081Z",
+  "lastMessageAt": "2025-03-06T16:57:35.062Z",
   "participant": {
     "id": 1,
     "username": "Fabien",
@@ -14,9 +14,9 @@
       "conversationId": 1,
       "senderId": 1,
       "type": "text",
-      "content": "Très bien Madeleine je vais envoyer le plan lundi.",
+      "content": "Hello! This is a sample conversation with Fabien.",
       "metadata": {},
-      "createdAt": "2025-02-20T14:35:41.081Z",
+      "createdAt": "2025-03-06T15:57:35.062Z",
       "status": "read"
     },
     {
@@ -24,66 +24,20 @@
       "conversationId": 1,
       "senderId": 5,
       "type": "text",
-      "content": "Hello Fabien ! Tu devais partager la plan avec les directeurs hier et je n’ai pas vu passer le message. Tu as besoin d’aide pour finaliser l’email ? ",
+      "content": "Hi there! This is a new direct conversation system.",
       "metadata": {},
-      "createdAt": "2025-02-25T15:05:41.081Z",
+      "createdAt": "2025-03-06T16:27:35.062Z",
       "status": "read"
     },
     {
-      "id": 2,
-      "conversationId": 1,
-      "senderId": 5,
-      "type": "image",
-      "content": "https://i.ibb.co/FqbmM28K/Distracted-boyfriend.png",
-      "metadata": {
-        "caption": "Toi en ce moment ?"
-      },
-      "createdAt": "2025-02-26T10:58:00.000Z",
-      "status": "read"
-    },
-    {
-      "id": 2,
-      "conversationId": 1,
-      "senderId": 5,
-      "type": "image",
-      "content": "https://i.ibb.co/S4L47Dg7/surprisedpikachu-jpg.webp",
-      "metadata": {
-        "caption": "Ta tête quand tes n-1 vont te demander pourquoi le plan n’est pas encore envoyé.?"
-      },
-      "createdAt": "2025-02-27T09:33:00.000Z",
-      "status": "read"
-    },
-    {
-      "id": 2,
-      "conversationId": 1,
-      "senderId": 5,
-      "type": "image",
-      "content": "https://i.ibb.co/gM3vNGm3/Shiningmeme.jpg",
-      "metadata": {
-        "caption": "Here's Madeleine ! Ça en est où ce plan ?"
-      },
-      "createdAt": "2025-02-28T11:21:00.000Z",
-      "status": "read"
-    },
-    {
-      "id": 1,
+      "id": 3,
       "conversationId": 1,
       "senderId": 1,
       "type": "text",
-      "content": "Ok ok c'est bon je viens de l'envoyer.",
+      "content": "It looks great! No API calls needed to create conversations.",
       "metadata": {},
-      "createdAt": "2025-02-28T15:05:41.081Z",
-      "status": "sent"
-    },
-    {
-      "id": 2,
-      "conversationId": 1,
-      "senderId": 5,
-      "type": "text",
-      "content": "Super Fabien. Je te souhaite un bon week-end",
-      "metadata": {},
-      "createdAt": "2025-02-28T15:55:41.081Z",
-      "status": "sent"
+      "createdAt": "2025-03-06T16:57:35.062Z",
+      "status": "read"
     }
   ]
 }
