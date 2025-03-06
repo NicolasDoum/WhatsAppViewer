@@ -1,6 +1,6 @@
 {
   "id": 3,
-  "lastMessageAt": "2025-03-06T17:05:36.058Z",
+  "lastMessageAt": "2025-03-06T17:10:30.000Z",
   "participant": {
     "id": 3,
     "username": "julie",
@@ -37,6 +37,26 @@
       "content": "It looks great! No API calls needed to create conversations.",
       "metadata": {},
       "createdAt": "2025-03-06T17:05:36.058Z",
+      "status": "read"
+    },
+    {
+      "id": 4,
+      "conversationId": 3,
+      "senderId": 5,
+      "type": "text",
+      "content": "This is a new message that should persist after server restart!",
+      "metadata": {},
+      "createdAt": "2025-03-06T17:10:00.000Z",
+      "status": "sent"
+    },
+    {
+      "id": 5,
+      "conversationId": 3,
+      "senderId": 3,
+      "type": "text",
+      "content": "Great! The changes are now preserved.",
+      "metadata": {},
+      "createdAt": "2025-03-06T17:10:30.000Z",
       "status": "read"
     }
   ]
