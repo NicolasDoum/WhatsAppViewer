@@ -213,7 +213,7 @@ export async function createSampleConversation(userId: number, conversationId: n
   return conversation;
 }
 
-// Create sample conversations with all users
+// Create sample conversations with all users, but only if they don't exist
 export async function createSampleConversations() {
   const users = await loadUsers();
   
@@ -222,8 +222,18 @@ export async function createSampleConversations() {
     // Skip current user
     if (user.id === 5) continue;
     
-    await createSampleConversation(user.id, id++);
+    // Check if conversation file already exists
+    const filePath = path.join(CONVERSATIONS_DIR, `${id}.json`);
+    try {
+      await fs.access(filePath);
+      console.log(`Conversation ${id} already exists, skipping creation`);
+    } catch {
+      // File doesn't exist, create it
+      await createSampleConversation(user.id, id);
+    }
+    
+    id++; // Increment regardless if we created or skipped
   }
   
-  console.log('Created sample conversations with all users');
+  console.log('Sample conversations check completed');
 }
