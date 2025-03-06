@@ -20,12 +20,12 @@ const ChatListItem: React.FC<ChatListItemProps> = ({
   // Get the participant (not the current user)
   const otherParticipant: User = conversation.participant;
 
-  // Format the last message time - always show as today's time
+  // Format the last message time with date and time
   const formatMessageTime = (date: Date) => {
     const messageDate = new Date(date);
     
-    // Just show the time (hours:minutes)
-    return format(messageDate, 'HH:mm');
+    // Show date and time
+    return format(messageDate, 'MMM d, HH:mm');
   };
 
   // Get last message preview text

@@ -7,17 +7,12 @@ interface ChatHeaderProps {
 }
 
 const ChatHeader: React.FC<ChatHeaderProps> = ({ participant }) => {
-  // Format the last seen time - always show as today
+  // Format the last seen time with actual date
   const formatLastSeen = (date: Date) => {
-    const now = new Date();
     const lastSeenDate = new Date(date);
     
-    // Use the hours/minutes from the provided date but make it today
-    const todayWithSameTime = new Date();
-    todayWithSameTime.setHours(lastSeenDate.getHours());
-    todayWithSameTime.setMinutes(lastSeenDate.getMinutes());
-    
-    return `last seen today at ${format(todayWithSameTime, 'HH:mm')}`;
+    // Display the actual date and time the user was last seen
+    return `last seen ${format(lastSeenDate, 'MMM d, yyyy')} at ${format(lastSeenDate, 'HH:mm')}`;
   };
 
   return (

@@ -11,7 +11,7 @@ interface MessageBubbleProps {
 
 const MessageBubble: React.FC<MessageBubbleProps> = ({ message, isCurrentUser, sender }) => {
   const formatMessageTime = (date: Date) => {
-    return format(new Date(date), 'HH:mm');
+    return format(new Date(date), 'MMM d, HH:mm');
   };
 
   // Determine message content based on type
