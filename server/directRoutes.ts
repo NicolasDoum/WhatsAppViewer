@@ -82,10 +82,13 @@ export async function registerDirectRoutes(app: Express): Promise<Server> {
       const data = await fs.readFile(filePath, 'utf-8');
       const conversation: DirectConversation = JSON.parse(data);
       
-      // Generate a new message ID
+      // Generate a new message ID using conversationId as prefix
+      // For conversation 1, IDs start at 1001
+      // For conversation 2, IDs start at 2001, etc.
+      const baseMessageId = conversationId * 1000;
       const messageId = conversation.messages.length > 0 
         ? Math.max(...conversation.messages.map(m => m.id)) + 1 
-        : 1;
+        : baseMessageId + 1;
       
       // Create the new message
       const now = new Date();
