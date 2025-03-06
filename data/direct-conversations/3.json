@@ -1,6 +1,6 @@
 {
   "id": 3,
-  "lastMessageAt": "2025-03-06T13:16:34.040Z",
+  "lastMessageAt": "2025-03-06T13:17:18.610Z",
   "participant": {
     "id": 3,
     "username": "julie",
@@ -16,7 +16,7 @@
       "type": "text",
       "content": "Hello! This is a sample conversation with Julie Decision.",
       "metadata": {},
-      "createdAt": "2025-03-06T12:16:34.040Z",
+      "createdAt": "2025-03-06T12:17:18.610Z",
       "status": "read"
     },
     {
@@ -26,7 +26,7 @@
       "type": "text",
       "content": "Hi there! This is a new direct conversation system.",
       "metadata": {},
-      "createdAt": "2025-03-06T12:46:34.040Z",
+      "createdAt": "2025-03-06T12:47:18.610Z",
       "status": "read"
     },
     {
@@ -36,7 +36,7 @@
       "type": "text",
       "content": "It looks great! No API calls needed to create conversations.",
       "metadata": {},
-      "createdAt": "2025-03-06T13:16:34.040Z",
+      "createdAt": "2025-03-06T13:17:18.610Z",
       "status": "read"
     }
   ]

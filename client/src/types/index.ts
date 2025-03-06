@@ -32,5 +32,5 @@ export interface Message {
 // UI and state types
 export interface ActiveConversation extends Conversation {
   // This interface extends Conversation with the same structure
-  // Kept for backward compatibility if needed
+  // Maintained for explicit type naming
 }
