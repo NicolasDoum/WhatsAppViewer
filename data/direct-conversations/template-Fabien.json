@@ -5,7 +5,7 @@
     "id": 1,
     "username": "Fabien",
     "displayName": "Fabien",
-    "avatar": "https://i.ibb.co/vCcBv66D/Fabienport.png",
+    "avatar": "https://i.ibb.co/vQcBv6D/FabienPort.jpg",
     "lastSeen": "2025-03-05T20:17:25.856Z"
   },
   "messages": [
@@ -44,7 +44,7 @@
       "conversationId": 1,
       "senderId": 5,
       "type": "image",
-      "content": "https://i.ibb.co/FqbmM28K/Distracted-boyfriend.png",
+      "content": "https://i.ibb.co/FqbmM28/DistractedBoyfriend.jpg",
       "metadata": {
         "caption": "Toi avec tes emails urgents du moment."
       },
@@ -56,7 +56,7 @@
       "conversationId": 1,
       "senderId": 5,
       "type": "image",
-      "content": "https://i.ibb.co/S4L47Dg7/surprisedpikachu-jpg.webp",
+      "content": "https://i.ibb.co/S4L47Dg/SurprisedPikachu.jpg",
       "metadata": {
         "caption": "Ta tête quand tes n-1 vont te demander pourquoi le plan n’est pas encore envoyé."
       },
@@ -68,7 +68,7 @@
       "conversationId": 1,
       "senderId": 5,
       "type": "image",
-      "content": "https://i.ibb.co/gM3vNGm3/Shiningmeme.jpg",
+      "content": "https://i.ibb.co/gM3vNGm/ShiningMeme.jpg",
       "metadata": {
         "caption": "Here’s Madeleine ! Tu en es où sur le plan ?"
       },
