@@ -1,0 +1,18 @@
+{
+  "participants": [
+    { "userId": 1 },
+    { "userId": 5 }
+  ],
+  "messages": [
+    {
+      "senderId": 5,
+      "type": "image",
+      "content": "https://i.ibb.co/FqbmM28K/Distracted-boyfriend.png",
+      "status": "sent",
+      "metadata": {
+        "caption": "This perfectly describes the situation!"
+      }
+    }
+  ],
+  "conversationId": 1
+}

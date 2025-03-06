@@ -2,6 +2,9 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { startFileWatcher, createSimpleConversationTemplate } from "./fileWatcher";
+import { startSimpleFileWatcher, createSimpleConversationTemplate as createSimpleTemplate, createSimpleSampleConversations } from "./simpleFileWatcher";
+import { registerSimpleRoutes } from "./simpleRoutes";
+import { SimpleConversationManager } from "./simpleConversationManager";
 
 const app = express();
 app.use(express.json());
@@ -37,8 +40,21 @@ app.use((req, res, next) => {
   next();
 });
 
+// Serve static files from the public directory
+app.use(express.static('public'));
+console.log('Files in the public directory are served at the root path.');
+console.log('Instead of /public/MadeleinePort.jpg, use /MadeleinePort.jpg.');
+
 (async () => {
+  // Initialize the simple conversation manager
+  await SimpleConversationManager.initialize();
+  
+  // Register both the original routes and the new simple routes
+  // Original routes will be kept for backward compatibility
   const server = await registerRoutes(app);
+  
+  // Register our new simplified routes
+  await registerSimpleRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
@@ -67,10 +83,15 @@ app.use((req, res, next) => {
   }, async () => {
     log(`serving on port ${port}`);
     
-    // Start the file watcher for new conversations
+    // Start both file watchers
     await startFileWatcher();
+    await startSimpleFileWatcher();
     
-    // Create a template file for users to copy
+    // Create template files for users to copy
     await createSimpleConversationTemplate();
+    await createSimpleTemplate();
+    
+    // Create sample conversations with each user
+    await createSimpleSampleConversations();
   });
 })();

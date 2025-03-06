@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "username": "fabian",
-    "displayName": "Fabian",
-    "avatar": "https://images.unsplash.com/photo-1599566150163-29194dcaad36",
+    "username": "Fabien",
+    "displayName": "Fabien",
+    "avatar": "https://i.ibb.co/vCcBv66D/Fabienport.png",
     "lastSeen": "2025-03-05T20:17:25.856Z"
   },
   {
@@ -15,9 +15,9 @@
   },
   {
     "id": 3,
-    "username": "madeleine",
-    "displayName": "Madeleine Ythu",
-    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+    "username": "julie",
+    "displayName": "Julie Decision",
+    "avatar": "https://i.ibb.co/Y7JkzTxR/Julie.png",
     "lastSeen": "2025-03-04T20:17:25.856Z"
   },
   {
@@ -31,7 +31,7 @@
     "id": 5,
     "username": "currentUser",
     "displayName": "Current User",
-    "avatar": "/MadeleinePort.jpg",
+    "avatar": "https://i.ibb.co/TqNzRN0z/Madeleine-Port.jpg",
     "lastSeen": "2025-03-05T20:17:25.856Z"
   }
 ]

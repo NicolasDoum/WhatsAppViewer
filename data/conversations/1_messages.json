@@ -9,15 +9,15 @@
     "status": "read"
   },
   {
-    "id": 2,
+    "id": 13,
     "conversationId": 1,
     "senderId": 5,
-    "type": "text",
-    "content": "I ain't reading all that\nI'm happy for u tho\nor sorry that happened",
+    "type": "image",
+    "content": "https://i.ibb.co/FqbmM28K/Distracted-boyfriend.png",
     "metadata": {
-      "isQuote": true
+      "caption": "This perfectly describes the situation!"
     },
-    "createdAt": "2025-03-05T18:07:25.860Z",
-    "status": "read"
+    "createdAt": "2025-03-06T10:58:00.000Z",
+    "status": "sent"
   }
 ]
