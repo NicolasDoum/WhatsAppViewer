@@ -33,5 +33,12 @@
     "displayName": "Current User",
     "avatar": "https://i.ibb.co/TqNzRN0z/Madeleine-Port.jpg",
     "lastSeen": "2025-03-05T20:17:25.856Z"
+  },
+  {
+    "id": 6,
+    "username": "sarah",
+    "displayName": "Sarah Johnson",
+    "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956",
+    "lastSeen": "2025-03-06T12:00:00.000Z"
   }
 ]

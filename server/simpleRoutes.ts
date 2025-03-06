@@ -1,15 +1,14 @@
 import { Express, Request, Response, NextFunction } from 'express';
 import { Server } from 'http';
 import { SimpleConversationManager } from './simpleConversationManager';
+import fs from 'fs/promises';
+import path from 'path';
 
 export async function registerSimpleRoutes(app: Express): Promise<Server> {
   // Get current user (always user with ID 5)
   app.get('/api/simple/me', async (req, res) => {
     try {
       // Read the users file to get the current user (ID 5)
-      const fs = require('fs').promises;
-      const path = require('path');
-      
       const usersData = await fs.readFile(path.join(process.cwd(), 'data', 'users.json'), 'utf8');
       const users = JSON.parse(usersData);
       
@@ -97,9 +96,6 @@ export async function registerSimpleRoutes(app: Express): Promise<Server> {
       }
       
       // Get the user data
-      const fs = require('fs').promises;
-      const path = require('path');
-      
       const usersData = await fs.readFile(path.join(process.cwd(), 'data', 'users.json'), 'utf8');
       const users = JSON.parse(usersData);
       
