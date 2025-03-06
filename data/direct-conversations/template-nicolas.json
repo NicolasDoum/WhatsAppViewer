@@ -1,6 +1,6 @@
 {
   "id": 4,
-  "lastMessageAt": "2025-03-06T13:00:25.520Z",
+  "lastMessageAt": "2025-03-06T13:47:57.661Z",
   "participant": {
     "id": 4,
     "username": "nicolas",
@@ -16,7 +16,7 @@
       "type": "text",
       "content": "Hello! This is a template conversation with Nicolas Domenech.",
       "metadata": {},
-      "createdAt": "2025-03-06T12:00:25.520Z",
+      "createdAt": "2025-03-06T12:47:57.661Z",
       "status": "read"
     },
     {
@@ -26,7 +26,7 @@
       "type": "text",
       "content": "Hi! Just edit this file to create a new conversation.",
       "metadata": {},
-      "createdAt": "2025-03-06T13:00:25.520Z",
+      "createdAt": "2025-03-06T13:47:57.661Z",
       "status": "read"
     }
   ]

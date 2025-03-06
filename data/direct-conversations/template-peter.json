@@ -1,6 +1,6 @@
 {
   "id": 2,
-  "lastMessageAt": "2025-03-06T13:00:25.519Z",
+  "lastMessageAt": "2025-03-06T13:47:57.654Z",
   "participant": {
     "id": 2,
     "username": "peter",
@@ -16,7 +16,7 @@
       "type": "text",
       "content": "Hello! This is a template conversation with Peter Drucker.",
       "metadata": {},
-      "createdAt": "2025-03-06T12:00:25.519Z",
+      "createdAt": "2025-03-06T12:47:57.654Z",
       "status": "read"
     },
     {
@@ -26,7 +26,7 @@
       "type": "text",
       "content": "Hi! Just edit this file to create a new conversation.",
       "metadata": {},
-      "createdAt": "2025-03-06T13:00:25.519Z",
+      "createdAt": "2025-03-06T13:47:57.654Z",
       "status": "read"
     }
   ]
