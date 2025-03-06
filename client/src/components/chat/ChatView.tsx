@@ -13,8 +13,11 @@ const ChatView: React.FC<ChatViewProps> = ({
   currentUser
 }) => {
   // Get the other participant (not the current user)
+  // Support both formats: direct conversation with participant property
+  // and regular conversation with participants array
   const otherParticipant: User | undefined = 
-    activeConversation.participants?.find(p => p.id !== currentUser.id);
+    activeConversation.participant || // Direct conversation format
+    activeConversation.participants?.find(p => p.id !== currentUser.id); // Original format
   
   if (!otherParticipant) {
     return (
@@ -31,7 +34,12 @@ const ChatView: React.FC<ChatViewProps> = ({
       <ChatMessages 
         messages={activeConversation.messages}
         currentUserId={currentUser.id}
-        participants={activeConversation.participants || []}
+        participants={
+          // Handle both formats: if participants array exists, use it
+          // otherwise create an array with just the participant and current user
+          activeConversation.participants || 
+          (activeConversation.participant ? [activeConversation.participant, currentUser] : [])
+        }
       />
     </div>
   );

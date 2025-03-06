@@ -23,7 +23,9 @@ const Sidebar: React.FC<SidebarProps> = ({
   
   // Filter conversations based on search term
   const filteredConversations = conversations.filter(convo => {
-    const participant = convo.participants?.[0];
+    // Handle both formats: direct conversations with a single participant
+    // and regular conversations with an array of participants
+    const participant = convo.participant || convo.participants?.[0];
     if (!participant) return false;
     
     return participant.displayName.toLowerCase().includes(searchTerm.toLowerCase());

@@ -18,7 +18,9 @@ const ChatListItem: React.FC<ChatListItemProps> = ({
   currentUserId
 }) => {
   // Get the other participant (not the current user)
-  const otherParticipant: User | undefined = conversation.participants?.[0];
+  // Handle both formats: direct conversations with a single participant property
+  // and regular conversations with an array of participants
+  const otherParticipant: User | undefined = conversation.participant || conversation.participants?.[0];
   
   if (!otherParticipant) {
     return null;
@@ -34,7 +36,13 @@ const ChatListItem: React.FC<ChatListItemProps> = ({
 
   // Get last message preview text
   const getLastMessagePreview = () => {
-    const lastMessage = conversation.lastMessage;
+    // Handle both formats: direct conversations with messages array
+    // and regular conversations with lastMessage property
+    const lastMessage = conversation.lastMessage || 
+      (conversation.messages && conversation.messages.length > 0 
+        ? conversation.messages[conversation.messages.length - 1] 
+        : null);
+        
     if (!lastMessage) return '';
     
     if (lastMessage.type === 'text') {

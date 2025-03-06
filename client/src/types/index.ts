@@ -11,7 +11,10 @@ export interface Conversation {
   id: number;
   lastMessageAt: Date;
   lastMessage?: Message;
-  participants?: User[];
+  // Support both formats:
+  participants?: User[];   // Original format: array of participants
+  participant?: User;      // Direct conversation format: single participant
+  messages?: Message[];    // Direct conversations include messages directly
 }
 
 export interface Message {

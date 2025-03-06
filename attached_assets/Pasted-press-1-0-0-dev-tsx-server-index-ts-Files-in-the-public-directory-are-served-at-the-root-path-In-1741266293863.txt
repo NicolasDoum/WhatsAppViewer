@@ -1,0 +1,56 @@
+press@1.0.0 dev
+> tsx server/index.ts
+
+Files in the public directory are served at the root path.
+Instead of /public/MadeleinePort.jpg, use /MadeleinePort.jpg.
+1:04:33 PM [express] serving on port 5000
+Watching for new conversation files in: /home/runner/workspace/data/new-conversations
+Found 5 files in the directory. Processing...
+File watcher started.
+Watching for new conversation files in: /home/runner/workspace/data/new-conversations
+Found 5 files in the directory. Processing with simple manager...
+Simple file watcher started.
+Template already exists, skipping creation
+Simple template already exists, skipping creation
+Created simple conversation 37 with participant Fabien
+Created simple conversation 38 with participant Peter Drucker
+Created simple conversation 39 with participant Julie Decision
+Created simple conversation 40 with participant Nicolas Domenech
+Created sample conversations with all users
+Created direct conversations directory: /home/runner/workspace/data/direct-conversations
+Template for Fabien already exists, skipping
+Template for peter already exists, skipping
+Template for julie already exists, skipping
+Template for nicolas already exists, skipping
+Template for sarah already exists, skipping
+Created direct conversations directory: /home/runner/workspace/data/direct-conversations
+Created sample conversation with Fabien
+Created direct conversations directory: /home/runner/workspace/data/direct-conversations
+Created sample conversation with Peter Drucker
+Created direct conversations directory: /home/runner/workspace/data/direct-conversations
+Created sample conversation with Julie Decision
+Created direct conversations directory: /home/runner/workspace/data/direct-conversations
+Created sample conversation with Nicolas Domenech
+Created direct conversations directory: /home/runner/workspace/data/direct-conversations
+Created sample conversation with Sarah Johnson
+Created sample conversations with all users
+Created direct conversations directory: /home/runner/workspace/data/direct-conversations
+1:04:36 PM [express] GET /api/direct/me 304 in 2ms :: {"id":5,"username":"currentUser","displayName"…
+1:04:36 PM [express] GET /api/direct/conversations 200 in 8ms :: [{"id":5,"lastMessageAt":"2025-03-0…
+Created direct conversations directory: /home/runner/workspace/data/direct-conversations
+1:04:36 PM [express] GET /api/direct/conversations/5 200 in 3ms :: {"id":5,"lastMessageAt":"2025-03-…
+1:04:36 PM [express] GET /api/direct/me 304 in 1ms :: {"id":5,"username":"currentUser","displayName"…
+Created direct conversations directory: /home/runner/workspace/data/direct-conversations
+1:04:36 PM [express] GET /api/direct/conversations 200 in 3ms :: [{"id":5,"lastMessageAt":"2025-03-0…
+Created direct conversations directory: /home/runner/workspace/data/direct-conversations
+1:04:36 PM [express] GET /api/direct/conversations/5 200 in 5ms :: {"id":5,"lastMessageAt":"2025-03-…
+Created direct conversations directory: /home/runner/workspace/data/direct-conversations
+1:04:38 PM [express] GET /api/direct/me 200 in 2ms :: {"id":5,"username":"currentUser","displayName"…
+1:04:38 PM [express] GET /api/direct/conversations 200 in 5ms :: [{"id":5,"lastMessageAt":"2025-03-0…
+Created direct conversations directory: /home/runner/workspace/data/direct-conversations
+1:04:38 PM [express] GET /api/direct/conversations/5 200 in 3ms :: {"id":5,"lastMessageAt":"2025-03-…
+Created direct conversations directory: /home/runner/workspace/data/direct-conversations
+1:04:38 PM [express] GET /api/direct/me 304 in 1ms :: {"id":5,"username":"currentUser","displayName"…
+1:04:38 PM [express] GET /api/direct/conversations 304 in 5ms :: [{"id":5,"lastMessageAt":"2025-03-0…
+Created direct conversations directory: /home/runner/workspace/data/direct-conversations
+1:04:38 PM [express] GET /api/direct/conversations/5 304 in 4ms :: {"id":5,"lastMessageAt":"2025-03-…
