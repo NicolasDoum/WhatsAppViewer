@@ -47,7 +47,10 @@ export async function loadAllConversations(): Promise<DirectConversation[]> {
   
   try {
     const files = await fs.readdir(CONVERSATIONS_DIR);
-    const jsonFiles = files.filter(file => file.endsWith('.json'));
+    // Filter out template files - only include real conversation files
+    const jsonFiles = files.filter(file => 
+      file.endsWith('.json') && !file.startsWith('template-')
+    );
     
     const conversations: DirectConversation[] = [];
     
