@@ -106,6 +106,11 @@ export async function createConversationTemplate() {
     // Skip current user
     if (user.id === 5) continue;
     
+    // Fix Fabien's avatar URL if needed
+    if (user.username === 'Fabien' && user.avatar && user.avatar.includes('vCcBv66D')) {
+      user.avatar = 'https://i.ibb.co/vCcBv66/Fabienport.png';
+    }
+    
     const templatePath = path.join(CONVERSATIONS_DIR, `template-${user.username}.json`);
     
     // Check if template already exists
@@ -162,6 +167,11 @@ export async function createSampleConversation(userId: number, conversationId: n
   if (!participant) {
     console.error(`User ${userId} not found`);
     return null;
+  }
+  
+  // Fix Fabien's avatar URL if needed
+  if (participant.username === 'Fabien' && participant.avatar && participant.avatar.includes('vCcBv66D')) {
+    participant.avatar = 'https://i.ibb.co/vCcBv66/Fabienport.png';
   }
   
   const now = new Date();
