@@ -47,7 +47,7 @@ const ChatView: React.FC<ChatViewProps> = ({
         />
       </div>
       
-      <MessageInput onSendMessage={handleSendMessage} />
+      {/* Message input removed for read-only experience */}
     </div>
   );
 };
