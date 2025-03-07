@@ -147,7 +147,7 @@ const Home: React.FC = () => {
     setShowingSidebar(true);
   };
 
-  // Modify the ChatView to add a back button when on mobile
+  // Render the chat view with proper mobile support
   const renderChatView = () => {
     if (!activeConversation) {
       return (
@@ -158,24 +158,12 @@ const Home: React.FC = () => {
     }
 
     return (
-      <div className="flex-1 flex flex-col">
-        {isMobile && (
-          <div className="bg-whatsapp-header-bg p-2 flex items-center">
-            <button 
-              onClick={handleBackToList}
-              className="text-gray-600 mr-2"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="19" y1="12" x2="5" y2="12"></line>
-                <polyline points="12 19 5 12 12 5"></polyline>
-              </svg>
-            </button>
-            <span className="font-medium">Back to conversations</span>
-          </div>
-        )}
+      <div className="flex-1 flex flex-col h-full overflow-hidden">
         <ChatView
           activeConversation={activeConversation}
           currentUser={currentUser}
+          onBackClick={isMobile ? handleBackToList : undefined}
+          onSendMessage={(content) => console.log('Message sent:', content)}
         />
       </div>
     );
@@ -201,18 +189,24 @@ const Home: React.FC = () => {
     );
   }
 
-  // On desktop, show both sidebar and chat view
+  // On desktop, show both sidebar and chat view with responsive widths
   return (
-    <div className="flex h-screen">
-      <Sidebar
-        currentUser={currentUser}
-        conversations={conversations}
-        activeConversationId={activeConversationId}
-        onSelectConversation={handleSelectConversation}
-        readConversations={readConversations}
-      />
+    <div className="flex h-screen overflow-hidden">
+      {/* Sidebar takes 25% of screen on medium screens, max width on large screens */}
+      <div className="w-1/4 max-w-xs border-r border-gray-200">
+        <Sidebar
+          currentUser={currentUser}
+          conversations={conversations}
+          activeConversationId={activeConversationId}
+          onSelectConversation={handleSelectConversation}
+          readConversations={readConversations}
+        />
+      </div>
       
-      {renderChatView()}
+      {/* Chat view takes remaining width */}
+      <div className="flex-1 overflow-hidden">
+        {renderChatView()}
+      </div>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import MessageBubble from './MessageBubble';
 import { Message, User } from '@/types';
 import { format } from 'date-fns';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface ChatMessagesProps {
   messages: Message[];
@@ -11,6 +12,7 @@ interface ChatMessagesProps {
 
 const ChatMessages: React.FC<ChatMessagesProps> = ({ messages, currentUserId, participants }) => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
 
   // Scroll to bottom when messages change
   useEffect(() => {
@@ -23,7 +25,10 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ messages, currentUserId, pa
   };
 
   return (
-    <div className="flex-1 chat-background overflow-y-auto px-10 py-3 scrollbar-custom" id="chat-messages">
+    <div 
+      className={`flex-1 chat-background overflow-y-auto ${isMobile ? 'px-3' : 'px-10'} py-3 scrollbar-custom`} 
+      id="chat-messages"
+    >
       {/* Messages */}
       {messages.map(message => (
         <MessageBubble
@@ -33,8 +38,6 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ messages, currentUserId, pa
           sender={findSender(message.senderId)}
         />
       ))}
-      
-      {/* Typing indicator removed */}
       
       <div ref={messagesEndRef} />
     </div>

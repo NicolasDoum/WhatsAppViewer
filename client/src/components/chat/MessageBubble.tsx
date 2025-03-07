@@ -2,6 +2,7 @@ import React from 'react';
 import { Message, User } from '@/types';
 import { format } from 'date-fns';
 import AudioPlayer from './AudioPlayer';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface MessageBubbleProps {
   message: Message;
@@ -10,7 +11,13 @@ interface MessageBubbleProps {
 }
 
 const MessageBubble: React.FC<MessageBubbleProps> = ({ message, isCurrentUser, sender }) => {
+  const isMobile = useIsMobile();
+  
   const formatMessageTime = (date: Date) => {
+    // On mobile, show only time for simplicity
+    if (isMobile) {
+      return format(new Date(date), 'HH:mm');
+    }
     return format(new Date(date), 'MMM d, HH:mm');
   };
 
@@ -89,7 +96,9 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message, isCurrentUser, s
       <div 
         className={`
           ${isCurrentUser ? 'bg-whatsapp-light-green' : 'bg-white'} 
-          rounded-lg p-3 max-w-[70%] shadow-sm
+          rounded-lg ${isMobile ? 'p-2' : 'p-3'} 
+          ${isMobile ? 'max-w-[85%]' : 'max-w-[70%]'} 
+          shadow-sm
         `}
       >
         {renderMessageContent()}
