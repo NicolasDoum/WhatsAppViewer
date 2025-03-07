@@ -34,7 +34,8 @@
 .chat-background {
   background-color: var(--whatsapp-chat-bg);
   background-image: url("./assets/chat-bg-pattern.svg");
-  background-size: contain;
+  background-repeat: repeat;
+  background-size: 100px;
   height: 100%;
 }
 
