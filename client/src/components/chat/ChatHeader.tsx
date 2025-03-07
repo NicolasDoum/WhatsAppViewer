@@ -27,12 +27,13 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({ participant, onBackClick }) => 
   return (
     <div className="h-16 bg-whatsapp-sidebar-bg flex items-center justify-between px-2 sm:px-4 border-b border-gray-200 sticky top-0 z-10">
       <div className="flex items-center">
-        {/* Enhanced back button for mobile */}
-        {isMobile && onBackClick && (
+        {/* Back button (shown on mobile but also works on desktop) */}
+        {onBackClick && (
           <button 
             onClick={onBackClick}
             aria-label="Go back to conversations"
             className="p-2 mr-2 text-green-600 hover:bg-gray-200 rounded-full active:bg-gray-300 active:scale-95 transition-transform"
+            style={isMobile ? {} : { visibility: 'hidden' }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M19 12H5M12 19l-7-7 7-7"/>

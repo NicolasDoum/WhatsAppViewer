@@ -33,19 +33,28 @@ const ChatView: React.FC<ChatViewProps> = ({
   };
 
   return (
-    <div className="flex-1 flex flex-col h-full overflow-hidden">
+    <div className={`flex-1 flex flex-col h-full ${isMobile ? 'absolute inset-0 z-10' : ''} overflow-hidden`}>
       <ChatHeader 
         participant={otherParticipant} 
-        onBackClick={isMobile ? onBackClick : undefined}
+        onBackClick={onBackClick}
       />
       
-      <div className="flex-1 overflow-hidden chat-background">
+      <div className="flex-1 overflow-y-auto chat-background">
         <ChatMessages 
           messages={activeConversation.messages}
           currentUserId={currentUser.id}
           participants={[activeConversation.participant, currentUser]}
         />
       </div>
+      
+      {/* Scroll hint indicator for mobile */}
+      {isMobile && (
+        <div className="absolute bottom-4 right-4 bg-white bg-opacity-80 rounded-full p-2 shadow-md animate-pulse">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-600">
+            <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+          </svg>
+        </div>
+      )}
       
       {/* Message input removed for read-only experience */}
     </div>
