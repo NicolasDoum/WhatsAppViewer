@@ -183,7 +183,8 @@ const Home: React.FC = () => {
     // On mobile, show either sidebar or chat view based on state
     return (
       <div className="flex h-screen overflow-hidden">
-        <div className={`w-full transition-all duration-300 ${showingSidebar ? 'block' : 'hidden'}`}>
+        {/* Sidebar view */}
+        <div className={`w-full fixed inset-0 z-10 transition-all duration-300 ${showingSidebar ? 'translate-x-0' : '-translate-x-full'}`}>
           <Sidebar
             currentUser={currentUser}
             conversations={conversations}
@@ -192,9 +193,24 @@ const Home: React.FC = () => {
             readConversations={readConversations}
           />
         </div>
-        <div className={`w-full transition-all duration-300 ${showingSidebar ? 'hidden' : 'block'}`}>
+        
+        {/* Chat view */}
+        <div className={`w-full fixed inset-0 z-20 transition-all duration-300 ${showingSidebar ? 'translate-x-full' : 'translate-x-0'}`}>
           {renderChatView()}
         </div>
+        
+        {/* Floating back button - as a fallback in case the header back button doesn't work */}
+        {!showingSidebar && (
+          <button 
+            onClick={handleBackToList}
+            className="fixed bottom-4 left-4 z-30 bg-green-600 text-white rounded-full p-3 shadow-lg"
+            aria-label="Back to conversations"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </button>
+        )}
       </div>
     );
   }
