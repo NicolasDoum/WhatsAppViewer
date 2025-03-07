@@ -192,8 +192,8 @@ const Home: React.FC = () => {
   // On desktop, show both sidebar and chat view with responsive widths
   return (
     <div className="flex h-screen overflow-hidden">
-      {/* Sidebar takes 25% of screen on medium screens, max width on large screens */}
-      <div className="w-1/4 max-w-xs border-r border-gray-200">
+      {/* Sidebar with fixed dimensions */}
+      <div className="w-80 min-w-[320px] border-r border-gray-200">
         <Sidebar
           currentUser={currentUser}
           conversations={conversations}

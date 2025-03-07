@@ -29,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   });
 
   return (
-    <div className={`${isMobile ? 'w-full' : 'w-1/4 max-w-xs'} border-r border-gray-200 flex flex-col bg-whatsapp-sidebar-bg h-full overflow-y-auto`}>
+    <div className="w-full border-r border-gray-200 flex flex-col bg-whatsapp-sidebar-bg h-full overflow-y-auto">
       <SidebarHeader currentUser={currentUser} />
       <SearchBar onSearch={setSearchTerm} />
       <ChatList 
