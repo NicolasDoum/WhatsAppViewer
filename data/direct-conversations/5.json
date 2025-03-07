@@ -3,28 +3,18 @@
   "lastMessageAt": "2025-03-06T17:05:36.078Z",
   "participant": {
     "id": 6,
-    "username": "sarah",
-    "displayName": "Sarah Johnson",
-    "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956",
+    "username": "thomas",
+    "displayName": "Thomas CEO Techsolve",
+    "avatar": "https://i.ibb.co/CKJ7Gjj0/Thomas-Techsolve.png",
     "lastSeen": "2025-03-06T12:00:00.000Z"
   },
   "messages": [
-    {
-      "id": 5001,
-      "conversationId": 5,
-      "senderId": 6,
-      "type": "text",
-      "content": "Hello! This is a sample conversation with Sarah Johnson.",
-      "metadata": {},
-      "createdAt": "2025-03-06T16:05:36.078Z",
-      "status": "read"
-    },
     {
       "id": 5002,
       "conversationId": 5,
       "senderId": 5,
       "type": "text",
-      "content": "Hi there! This is a new direct conversation system.",
+      "content": "Hello Thomas, j'ai vu que tu avais un point mardi prochain avec le codir. Vu les documents que je vois passer sur le lancement de l'Allemagne, je pense que vous avez un gros problème d'alignement sur le sujet. Ton COO veut d'abord établir le support client, la CMO le marketing et le CSO les ventes ! Je voudrais te proposer de prendre 30 minutes pour vous aligner sur l'effet majeur du lancement. Ça te va si je te fais un brief ?",
       "metadata": {},
       "createdAt": "2025-03-06T16:35:36.078Z",
       "status": "read"
@@ -34,9 +24,19 @@
       "conversationId": 5,
       "senderId": 6,
       "type": "text",
-      "content": "It looks great! No API calls needed to create conversations.",
+      "content": "Oui, et si tu as une autre méthode propose et je choisis entre les deux !",
       "metadata": {},
       "createdAt": "2025-03-06T17:05:36.078Z",
+      "status": "read"
+    },
+    {
+      "id": 5004,
+      "conversationId": 5,
+      "senderId": 5,
+      "type": "text",
+      "content": "Je te prépare ça d'ici demain.",
+      "metadata": {},
+      "createdAt": "2025-03-06T16:35:36.078Z",
       "status": "read"
     }
   ]
