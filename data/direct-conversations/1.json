@@ -3,8 +3,8 @@
   "lastMessageAt": "2025-03-06T15:35:41.081Z",
   "participant": {
     "id": 1,
-    "username": "Fabien",
-    "displayName": "Fabien",
+    "username": "Maxime",
+    "displayName": "Maxime",
     "avatar": "https://i.ibb.co/vCcBv66D/Fabienport.png",
     "lastSeen": "2025-03-05T20:17:25.856Z"
   },
@@ -24,7 +24,7 @@
       "conversationId": 1,
       "senderId": 5,
       "type": "text",
-      "content": "Hello Fabien ! Tu devais partager la plan avec les directeurs hier et je n'ai pas vu passer le message. Tu as besoin d'aide pour finaliser l'email ? ",
+      "content": "Hello Maxime ! Tu devais partager la plan avec les directeurs hier et je n'ai pas vu passer le message. Tu as besoin d'aide pour finaliser l'email ? ",
       "metadata": {},
       "createdAt": "2025-02-25T15:05:41.081Z",
       "status": "read"
@@ -80,7 +80,7 @@
       "conversationId": 1,
       "senderId": 5,
       "type": "text",
-      "content": "Super Fabien. Je te souhaite un bon week-end",
+      "content": "Super Maxime. Je te souhaite un bon week-end",
       "metadata": {},
       "createdAt": "2025-02-28T15:55:41.081Z",
       "status": "sent"

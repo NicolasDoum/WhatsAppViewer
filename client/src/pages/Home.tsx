@@ -60,7 +60,7 @@ const Home: React.FC = () => {
   });
 
   // Fetch all conversations
-  const { data: conversations } = useQuery<Conversation[]>({
+  const { data: conversationsRaw } = useQuery<Conversation[]>({
     queryKey: [baseApiUrl + '/conversations'],
     queryFn: async () => {
       try {
@@ -83,6 +83,16 @@ const Home: React.FC = () => {
       }
     }
   });
+  
+  // Filter out conversation #4 (can be toggled back on in the future)
+  const conversations = conversationsRaw?.filter(conv => conv.id !== 4) || [];
+  
+  // If active conversation is #4, clear it to prevent errors
+  useEffect(() => {
+    if (activeConversationId === 4) {
+      setActiveConversationId(conversations.length > 0 ? conversations[0].id : null);
+    }
+  }, [activeConversationId, conversations]);
 
   // Fetch active conversation with messages
   const { data: activeConversation } = useQuery<ActiveConversation>({

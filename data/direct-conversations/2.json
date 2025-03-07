@@ -3,8 +3,8 @@
   "lastMessageAt": "2025-03-06T17:05:36.055Z",
   "participant": {
     "id": 2,
-    "username": "peter",
-    "displayName": "Peter Drucker",
+    "username": "pierre",
+    "displayName": "Pierre Druck",
     "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61",
     "lastSeen": "2025-03-05T19:17:25.856Z"
   },
@@ -14,7 +14,7 @@
       "conversationId": 2,
       "senderId": 2,
       "type": "text",
-      "content": "Hello! This is a sample conversation with Peter Drucker.",
+      "content": "Hello Madeleine, j'ai un ami CEO qui m'a recommandé de te contacter. Comment ça se passe pour lancer l'abonnement ?",
       "metadata": {},
       "createdAt": "2025-03-06T16:05:36.055Z",
       "status": "read"
@@ -24,7 +24,7 @@
       "conversationId": 2,
       "senderId": 5,
       "type": "text",
-      "content": "Hi there! This is a new direct conversation system.",
+      "content": "Hello Pierre. C'est très simple je vais t'envoyer un lien stripe et ça démarre directement, pas de login, pas d'interface on travaille ensemble par whatsapp ou emails (et bientôt en live au téléphone) ! ",
       "metadata": {},
       "createdAt": "2025-03-06T16:35:36.055Z",
       "status": "read"
@@ -34,7 +34,7 @@
       "conversationId": 2,
       "senderId": 2,
       "type": "text",
-      "content": "It looks great! No API calls needed to create conversations.",
+      "content": "Top, j'attends le lien.",
       "metadata": {},
       "createdAt": "2025-03-06T17:05:36.055Z",
       "status": "read"
