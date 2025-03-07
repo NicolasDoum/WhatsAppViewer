@@ -27,7 +27,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   });
 
   return (
-    <div className="w-1/3 border-r border-gray-200 flex flex-col bg-whatsapp-sidebar-bg">
+    <div className="w-1/4 max-w-xs border-r border-gray-200 flex flex-col bg-whatsapp-sidebar-bg">
       <SidebarHeader currentUser={currentUser} />
       <SearchBar onSearch={setSearchTerm} />
       <ChatList 
