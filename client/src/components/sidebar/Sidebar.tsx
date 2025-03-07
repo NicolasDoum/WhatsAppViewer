@@ -3,6 +3,7 @@ import SidebarHeader from './SidebarHeader';
 import SearchBar from './SearchBar';
 import ChatList from './ChatList';
 import { User, Conversation } from '@/types';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface SidebarProps {
   currentUser: User;
@@ -20,6 +21,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   readConversations
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const isMobile = useIsMobile();
   
   // Filter conversations based on search term
   const filteredConversations = conversations.filter(convo => {
@@ -27,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   });
 
   return (
-    <div className="w-1/4 max-w-xs border-r border-gray-200 flex flex-col bg-whatsapp-sidebar-bg">
+    <div className={`${isMobile ? 'w-full' : 'w-1/4 max-w-xs'} border-r border-gray-200 flex flex-col bg-whatsapp-sidebar-bg h-full overflow-y-auto`}>
       <SidebarHeader currentUser={currentUser} />
       <SearchBar onSearch={setSearchTerm} />
       <ChatList 

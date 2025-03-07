@@ -4,12 +4,16 @@ import Sidebar from '@/components/sidebar/Sidebar';
 import ChatView from '@/components/chat/ChatView';
 import { User, Conversation, ActiveConversation } from '@/types';
 import { mockUsers, mockConversations, getMockMessagesForConversation, currentUser as mockCurrentUser } from '@/data/mockData';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Home: React.FC = () => {
   const queryClient = useQueryClient();
+  const isMobile = useIsMobile();
   const [activeConversationId, setActiveConversationId] = useState<number | null>(null);
   // Track which conversations have been read in this session
   const [readConversations, setReadConversations] = useState<Set<number>>(new Set());
+  // For mobile view, track if we're showing sidebar or chat
+  const [showingSidebar, setShowingSidebar] = useState(true);
 
   // Function to handle conversation selection and mark as read
   const handleSelectConversation = (conversationId: number) => {
@@ -19,6 +23,11 @@ const Home: React.FC = () => {
       newSet.add(conversationId);
       return newSet;
     });
+    
+    // On mobile, switch to chat view when selecting a conversation
+    if (isMobile) {
+      setShowingSidebar(false);
+    }
   };
 
   // Use direct file-based API (optional feature flag)
@@ -133,6 +142,66 @@ const Home: React.FC = () => {
     );
   }
 
+  // Handle back button functionality for mobile
+  const handleBackToList = () => {
+    setShowingSidebar(true);
+  };
+
+  // Modify the ChatView to add a back button when on mobile
+  const renderChatView = () => {
+    if (!activeConversation) {
+      return (
+        <div className="flex-1 flex items-center justify-center bg-gray-100">
+          <p className="text-gray-500">Select a conversation to start chatting</p>
+        </div>
+      );
+    }
+
+    return (
+      <div className="flex-1 flex flex-col">
+        {isMobile && (
+          <div className="bg-whatsapp-header-bg p-2 flex items-center">
+            <button 
+              onClick={handleBackToList}
+              className="text-gray-600 mr-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+            </button>
+            <span className="font-medium">Back to conversations</span>
+          </div>
+        )}
+        <ChatView
+          activeConversation={activeConversation}
+          currentUser={currentUser}
+        />
+      </div>
+    );
+  };
+
+  if (isMobile) {
+    // On mobile, show either sidebar or chat view based on state
+    return (
+      <div className="flex h-screen overflow-hidden">
+        <div className={`w-full transition-all duration-300 ${showingSidebar ? 'block' : 'hidden'}`}>
+          <Sidebar
+            currentUser={currentUser}
+            conversations={conversations}
+            activeConversationId={activeConversationId}
+            onSelectConversation={handleSelectConversation}
+            readConversations={readConversations}
+          />
+        </div>
+        <div className={`w-full transition-all duration-300 ${showingSidebar ? 'hidden' : 'block'}`}>
+          {renderChatView()}
+        </div>
+      </div>
+    );
+  }
+
+  // On desktop, show both sidebar and chat view
   return (
     <div className="flex h-screen">
       <Sidebar
@@ -143,16 +212,7 @@ const Home: React.FC = () => {
         readConversations={readConversations}
       />
       
-      {activeConversation ? (
-        <ChatView
-          activeConversation={activeConversation}
-          currentUser={currentUser}
-        />
-      ) : (
-        <div className="flex-1 flex items-center justify-center bg-gray-100">
-          <p className="text-gray-500">Select a conversation to start chatting</p>
-        </div>
-      )}
+      {renderChatView()}
     </div>
   );
 };
