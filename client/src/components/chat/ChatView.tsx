@@ -39,7 +39,7 @@ const ChatView: React.FC<ChatViewProps> = ({
         onBackClick={isMobile ? onBackClick : undefined}
       />
       
-      <div className="flex-1 overflow-hidden">
+      <div className="flex-1 overflow-hidden chat-background">
         <ChatMessages 
           messages={activeConversation.messages}
           currentUserId={currentUser.id}

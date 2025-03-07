@@ -26,7 +26,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ messages, currentUserId, pa
 
   return (
     <div 
-      className={`flex-1 chat-background overflow-y-auto ${isMobile ? 'px-3' : 'px-10'} py-3 scrollbar-custom`} 
+      className={`flex-1 overflow-y-auto ${isMobile ? 'px-3' : 'px-10'} py-3 scrollbar-custom h-full`} 
       id="chat-messages"
     >
       {/* Messages */}
