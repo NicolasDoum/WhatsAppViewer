@@ -63,14 +63,10 @@ console.log('Instead of /public/MadeleinePort.jpg, use /MadeleinePort.jpg.');
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000
+  // Serve the app on port 5173 (avoiding macOS AirPlay conflict on 5000)
   // this serves both the API and the client
-  const port = 5000;
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, async () => {
+  const port = 5173;
+  server.listen(port, "localhost", async () => {
     log(`serving on port ${port}`);
     
     // Create direct file-based conversations and templates

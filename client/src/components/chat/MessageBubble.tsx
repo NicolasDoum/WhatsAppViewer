@@ -14,11 +14,8 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message, isCurrentUser, s
   const isMobile = useIsMobile();
   
   const formatMessageTime = (date: Date) => {
-    // On mobile, show only time for simplicity
-    if (isMobile) {
-      return format(new Date(date), 'HH:mm');
-    }
-    return format(new Date(date), 'MMM d, HH:mm');
+    // Always show only time in messages (like real WhatsApp)
+    return format(new Date(date), 'HH:mm');
   };
 
   // Determine message content based on type
