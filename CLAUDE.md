@@ -157,7 +157,20 @@ kill -9 <PID>
 - Viewport: 600x852 pixels (50% wider than iPhone for better message separation)
 - Device scale factor: 2
 - Special CSS class `puppeteer-screenshot` removes padding during capture
-- Header design simplified: larger avatar (56px), bold name, phone/video icons only
+- Header design: enlarged 50% with avatar (84px), bold name (text-3xl), phone number (text-xl), icons (36px)
+
+### Header Size and Date Visibility Issues
+When increasing the header size, dates can get hidden behind it. The issue is caused by:
+1. The flex layout with `h-screen` constraining the container height
+2. Auto-scroll behavior in ScreenshotMessages scrolling past the first date
+3. Insufficient padding at the top of the messages container
+
+To fix:
+1. Add `flex-shrink-0` to the header to prevent it from being compressed
+2. Disable or adjust the auto-scroll in ScreenshotMessages
+3. Add sufficient top padding to the messages container (e.g., `pt-8` for 32px)
+4. Remove `overflow-hidden` from the main container if needed
+5. The header and messages area work as a flex column where the header takes its natural height and messages fill the remaining space
 
 ## Important Notes
 
