@@ -88,3 +88,20 @@ body.screenshot-mode {
 .screenshot-mode * {
   outline: none !important;
 }
+
+/* Special styles for Puppeteer screenshots */
+body.puppeteer-screenshot {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: white !important;
+}
+
+body.puppeteer-screenshot .screenshot-container {
+  padding: 0 !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+
+body.puppeteer-screenshot .flex.flex-col.h-screen {
+  height: 100vh !important;
+}

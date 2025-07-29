@@ -53,7 +53,7 @@ const Screenshot: React.FC = () => {
 
   return (
     <div className="screenshot-container min-h-screen bg-gray-100">
-      <div className="mx-auto" style={{ maxWidth: '800px' }}>
+      <div className="mx-auto" style={{ maxWidth: '600px' }}>
         <ScreenshotChatView
           conversation={conversation}
           currentUser={currentUser}

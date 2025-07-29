@@ -9,7 +9,10 @@
     "start": "NODE_ENV=production node dist/index.js",
     "check": "tsc",
     "generate": "tsx scripts/generateConversation.ts",
-    "generate:demo": "tsx scripts/demoConversations.ts"
+    "generate:demo": "tsx scripts/demoConversations.ts",
+    "screenshot": "tsx scripts/takeScreenshot.ts",
+    "auto-screenshot": "tsx scripts/autoScreenshot.ts",
+    "quick-screenshot": "tsx scripts/quickScreenshot.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -53,6 +56,7 @@
     "framer-motion": "^11.13.1",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.453.0",
+    "puppeteer": "^24.15.0",
     "react": "^18.3.1",
     "react-day-picker": "^8.10.1",
     "react-dom": "^18.3.1",
