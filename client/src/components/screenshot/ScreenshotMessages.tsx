@@ -16,22 +16,19 @@ const ScreenshotMessages: React.FC<ScreenshotMessagesProps> = ({
 }) => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll to bottom on mount
-  useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'auto' });
-    }
-  }, [messages]);
+  // Disabled auto-scroll to ensure date is visible
+  // useEffect(() => {
+  //   if (messagesEndRef.current) {
+  //     messagesEndRef.current.scrollIntoView({ behavior: 'auto' });
+  //   }
+  // }, [messages]);
 
   const findSender = (senderId: number): User | undefined => {
     return participants.find(p => p.id === senderId);
   };
 
   return (
-    <div className="flex-1 overflow-y-auto px-4 py-3">
-      {/* Initial padding */}
-      <div className="h-8"></div>
-      
+    <div className="flex-1 overflow-y-auto px-4 pt-8 pb-6 relative">
       {/* Group messages by date */}
       {(() => {
         let lastDate = '';
@@ -44,7 +41,7 @@ const ScreenshotMessages: React.FC<ScreenshotMessagesProps> = ({
           return (
             <React.Fragment key={message.id}>
               {showDateDivider && (
-                <div className="flex justify-center my-4">
+                <div className="flex justify-center my-6 first:mt-0">
                   <div className="bg-gray-200 rounded-full px-3 py-1 text-xs text-gray-600">
                     {messageDate}
                   </div>

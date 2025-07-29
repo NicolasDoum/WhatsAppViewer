@@ -4,41 +4,47 @@
     "username": "Fabien",
     "displayName": "Fabien",
     "avatar": "https://i.ibb.co/vCcBv66D/Fabienport.png",
-    "lastSeen": "2025-03-05T20:17:25.856Z"
+    "lastSeen": "2025-03-05T20:17:25.856Z",
+    "phoneNumber": "+33 6 12 34 56 78"
   },
   {
     "id": 2,
     "username": "peter",
     "displayName": "Peter Drucker",
     "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61",
-    "lastSeen": "2025-03-05T19:17:25.856Z"
+    "lastSeen": "2025-03-05T19:17:25.856Z",
+    "phoneNumber": "+33 6 98 76 54 32"
   },
   {
     "id": 3,
     "username": "julie",
     "displayName": "Julie Decision",
     "avatar": "https://i.ibb.co/Y7JkzTxR/Julie.png",
-    "lastSeen": "2025-03-04T20:17:25.856Z"
+    "lastSeen": "2025-03-04T20:17:25.856Z",
+    "phoneNumber": "+33 6 45 67 89 01"
   },
   {
     "id": 4,
     "username": "nicolas",
     "displayName": "Nicolas Domenech",
     "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e",
-    "lastSeen": "2025-03-05T18:17:25.856Z"
+    "lastSeen": "2025-03-05T18:17:25.856Z",
+    "phoneNumber": "+33 6 23 45 67 89"
   },
   {
     "id": 5,
     "username": "currentUser",
     "displayName": "Current User",
     "avatar": "https://i.ibb.co/TqNzRN0z/Madeleine-Port.jpg",
-    "lastSeen": "2025-03-05T20:17:25.856Z"
+    "lastSeen": "2025-03-05T20:17:25.856Z",
+    "phoneNumber": "+33 6 11 22 33 44"
   },
   {
     "id": 6,
     "username": "sarah",
     "displayName": "Sarah Johnson",
     "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956",
-    "lastSeen": "2025-03-06T12:00:00.000Z"
+    "lastSeen": "2025-03-06T12:00:00.000Z",
+    "phoneNumber": "+33 6 55 66 77 88"
   }
 ]

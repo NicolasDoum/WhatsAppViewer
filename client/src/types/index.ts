@@ -5,6 +5,7 @@ export interface User {
   displayName: string;
   avatar: string;
   lastSeen: Date;
+  phoneNumber?: string;
 }
 
 export interface Conversation {
