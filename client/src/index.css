@@ -61,3 +61,30 @@
 .bg-white {
   background-color: white;
 }
+
+/* Screenshot mode styles */
+body.screenshot-mode {
+  overflow: auto;
+  height: auto;
+  background-color: #f0f0f0;
+  padding: 20px 0;
+}
+
+.screenshot-container {
+  padding: 20px;
+}
+
+/* WhatsApp-style header */
+.bg-whatsapp-green {
+  background-color: var(--whatsapp-teal);
+}
+
+/* Clean screenshot view */
+.screenshot-mode .chat-background {
+  min-height: 600px;
+}
+
+/* Remove any unwanted borders in screenshot mode */
+.screenshot-mode * {
+  outline: none !important;
+}
