@@ -28,7 +28,7 @@ const ScreenshotMessages: React.FC<ScreenshotMessagesProps> = ({
   };
 
   return (
-    <div className="flex-1 overflow-y-auto px-4 pt-8 pb-6 relative">
+    <div className="flex-1 overflow-y-auto px-4 pt-2 pb-6 relative">
       {/* Group messages by date */}
       {(() => {
         let lastDate = '';
@@ -41,7 +41,7 @@ const ScreenshotMessages: React.FC<ScreenshotMessagesProps> = ({
           return (
             <React.Fragment key={message.id}>
               {showDateDivider && (
-                <div className="flex justify-center my-6 first:mt-0">
+                <div className="flex justify-center my-3 first:mt-1">
                   <div className="bg-gray-200 rounded-full px-3 py-1 text-xs text-gray-600">
                     {messageDate}
                   </div>

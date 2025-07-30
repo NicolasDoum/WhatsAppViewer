@@ -180,3 +180,24 @@ To fix:
 - The default route (`/`) redirects to `/screenshot/1`
 - Screenshots capture exactly one screen (no scrolling)
 - Header shows only essential elements: avatar, name, and call icons
+
+## WhatsApp Perspective and Sender Logic
+
+When creating conversations, it's crucial to understand the perspective:
+
+- **The screenshot is always from the phone owner's perspective**
+- **Header (top bar)**: Shows the OTHER person's profile (name, avatar, phone number)
+- **Message alignment**:
+  - **Right side (green bubbles)**: Messages SENT by the phone owner (senderId: 5)
+  - **Left side (white bubbles)**: Messages RECEIVED from the other person
+  
+### Example:
+If creating a conversation where Laurent chats with Hervé:
+- Header shows: Hervé's profile
+- Laurent's messages (senderId: 5) appear on the right
+- Hervé's messages (senderId: 7) appear on the left
+- The first message should typically be from the phone owner (Laurent)
+
+### User IDs:
+- User ID 5 = Always the current user/phone owner (shows on right)
+- Other user IDs = The person they're chatting with (shows on left)

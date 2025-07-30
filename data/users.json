@@ -46,5 +46,13 @@
     "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956",
     "lastSeen": "2025-03-06T12:00:00.000Z",
     "phoneNumber": "+33 6 55 66 77 88"
+  },
+  {
+    "id": 7,
+    "username": "herve",
+    "displayName": "Hervé Jouffe IA",
+    "avatar": "https://xikbpurswjtmnxwitpzc.supabase.co/storage/v1/object/public/publicimages//PHOTO-2025-06-24-15-28-22.jpg",
+    "lastSeen": "2025-01-30T12:00:00.000Z",
+    "phoneNumber": "+33 6 73 26 92 98"
   }
 ]

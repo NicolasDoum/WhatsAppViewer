@@ -1,0 +1,94 @@
+{
+  "id": 11,
+  "lastMessageAt": "2025-01-30T10:45:00.000Z",
+  "participant": {
+    "id": 7,
+    "username": "herve",
+    "displayName": "Hervé Jouffe IA",
+    "avatar": "https://xikbpurswjtmnxwitpzc.supabase.co/storage/v1/object/public/publicimages//PHOTO-2025-06-24-15-28-22.jpg",
+    "lastSeen": "2025-01-30T10:45:00.000Z",
+    "phoneNumber": "+33 6 73 26 92 98"
+  },
+  "messages": [
+    {
+      "id": 3001,
+      "conversationId": 11,
+      "senderId": 5,
+      "type": "text",
+      "content": "Salut Hervé, j'ai besoin de ton aide. Mes deux chefs d'équipe se disputent sur la nouvelle orga depuis le passage en 2/8. Jean veut garder ses gars ensemble, Marc veut mixer les équipes pour l'efficacité. Ça fait 3 semaines que ça dure, les gars commencent à s'inquiéter. Comment je tranche sans passer pour le méchant ? J'ai bossé 10 ans avec eux avant...",
+      "metadata": {},
+      "createdAt": "2025-01-30T10:00:00.000Z",
+      "status": "read"
+    },
+    {
+      "id": 3002,
+      "conversationId": 11,
+      "senderId": 7,
+      "type": "text",
+      "content": "3 semaines d'indécision, c'est 3 semaines où ton équipe navigue sans cap clair. Dis-moi : qu'est-ce qui te retient vraiment de trancher entre ces deux visions ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T10:05:00.000Z",
+      "status": "read"
+    },
+    {
+      "id": 3003,
+      "conversationId": 11,
+      "senderId": 5,
+      "type": "text",
+      "content": "Ben franchement... j'ai peur de casser l'ambiance\nJean c'est mon pote depuis 15 ans, on a fait les 3/8 ensemble\nSi je lui dis non, il va penser que je le trahis\nMarc aussi, on a toujours été soudés face à la direction\nMaintenant c'est moi la direction... et je dois choisir un camp\nLes gars me regardent déjà différemment depuis ma promo",
+      "metadata": {},
+      "createdAt": "2025-01-30T10:15:00.000Z",
+      "status": "read"
+    },
+    {
+      "id": 3004,
+      "conversationId": 11,
+      "senderId": 7,
+      "type": "text",
+      "content": "Je comprends ta peur Laurent, c'est légitime de vouloir préserver les relations. Mais dis-moi : qu'est-ce qui est le plus important pour toi - éviter temporairement un conflit ou construire une organisation qui fonctionne durablement ? Un chef qui ne prend pas de décision par peur de déplaire finit par décevoir tout le monde.",
+      "metadata": {},
+      "createdAt": "2025-01-30T10:20:00.000Z",
+      "status": "read"
+    },
+    {
+      "id": 3005,
+      "conversationId": 11,
+      "senderId": 5,
+      "type": "text",
+      "content": "Tu as raison mais c'est dur...\nOk alors concrètement, Marc a peut-être raison sur l'efficacité\nMixer les équipes ça peut marcher\nMais Jean connaît ses gars par cœur, leur force et faiblesses\nEt puis avec la baisse d'activité, c'est déjà tendu\nSi je casse les équipes en plus...",
+      "metadata": {},
+      "createdAt": "2025-01-30T10:30:00.000Z",
+      "status": "read"
+    },
+    {
+      "id": 3006,
+      "conversationId": 11,
+      "senderId": 7,
+      "type": "text",
+      "content": "Marc semble avoir la vision juste pour l'efficacité. Voici ton action pour aujourd'hui : réunis Jean et Marc ensemble, expose la décision de tester les équipes mixtes pendant 2 semaines. Puis demande à Jean d'être ton expert pour identifier les meilleures combinaisons de talents.",
+      "metadata": {},
+      "createdAt": "2025-01-30T10:35:00.000Z",
+      "status": "read"
+    },
+    {
+      "id": 3007,
+      "conversationId": 11,
+      "senderId": 5,
+      "type": "text",
+      "content": "Ok je vais essayer\nPhase test de 2 semaines... ça peut passer\nComme ça personne ne se sent trahi définitivement\nMais Jean va quand même mal le prendre\nJe lui dis quoi pour pas qu'il le vive comme une défaite ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T10:40:00.000Z",
+      "status": "read"
+    },
+    {
+      "id": 3008,
+      "conversationId": 11,
+      "senderId": 7,
+      "type": "text",
+      "content": "Dis à Jean : \"J'ai besoin de ton expertise pour réussir ce test. Tu connais tes gars mieux que personne, aide-moi à identifier qui pourrait bien fonctionner ensemble dans les équipes mixtes.\"\nTu transformes son opposition en contribution précieuse. Reviens me dire comment ça s'est passé demain ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T10:45:00.000Z",
+      "status": "read"
+    }
+  ]
+}
