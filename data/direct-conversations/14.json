@@ -1,0 +1,94 @@
+{
+  "id": 14,
+  "lastMessageAt": "2025-01-30T14:28:12.055Z",
+  "participant": {
+    "id": 7,
+    "username": "herve",
+    "displayName": "Hervé Jouffe IA",
+    "avatar": "https://xikbpurswjtmnxwitpzc.supabase.co/storage/v1/object/public/publicimages//PHOTO-2025-06-24-15-28-22.jpg",
+    "lastSeen": "2025-01-30T14:28:12.055Z",
+    "phoneNumber": "+33 6 73 26 92 98"
+  },
+  "messages": [
+    {
+      "id": 3001,
+      "conversationId": 14,
+      "senderId": 5,
+      "type": "text",
+      "content": "Salut Hervé, demain j'annonce le passage en 2/8 et j'ai la boule au ventre. Comment je peux rassurer mes gars alors que moi-même je ne sais pas si on sera encore là dans 6 mois ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:15:32.055Z",
+      "status": "read"
+    },
+    {
+      "id": 3002,
+      "conversationId": 14,
+      "senderId": 7,
+      "type": "text",
+      "content": "Bonjour Thierry, je suis l'IA d'Hervé Jouffe. Mon rôle : t'aider à devenir le chef dont ton équipe a besoin.\n\nLa boule au ventre, c'est normal face à l'incertitude. Mais dis-moi : tes gars attendent quoi de toi demain - des promesses impossibles ou un chef qui assume la réalité ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:17:18.055Z",
+      "status": "read"
+    },
+    {
+      "id": 3003,
+      "conversationId": 14,
+      "senderId": 5,
+      "type": "text",
+      "content": "C'est ça le problème... je sais même pas quoi leur dire. Le siège nous dit 'focus qualité' mais ils répondent pas sur l'avenir du site. Et j'ai 3 de mes meilleurs qui veulent me voir cette semaine, sûrement pour partir. La prod qualité est en baisse, -5% ce mois. Je dois rendre un plan vendredi et franchement... j'y crois plus moi-même",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:19:45.055Z",
+      "status": "read"
+    },
+    {
+      "id": 3004,
+      "conversationId": 14,
+      "senderId": 7,
+      "type": "text",
+      "content": "Tu me décris parfaitement la situation. Maintenant, arrête de subir et reprends la main.\n\nTes 3 meilleurs veulent te voir ? Vois-les AVANT l'annonce, pas après. Un par un, aujourd'hui.\n\nTon plan pour vendredi : oublie le blabla corporate. Focus sur une bataille qu'on peut gagner : la qualité. C'est ça ou la fermeture assurée.",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:21:03.055Z",
+      "status": "read"
+    },
+    {
+      "id": 3005,
+      "conversationId": 14,
+      "senderId": 5,
+      "type": "text",
+      "content": "Qu'est-ce que je contrôle ? 😔 Le site perd de l'argent, les volumes baissent, mes meilleurs partent... Je suis technicien moi, pas communiquant. J'ai grimpé les échelons par compétence technique, pas pour faire des discours",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:22:57.055Z",
+      "status": "read"
+    },
+    {
+      "id": 3006,
+      "conversationId": 14,
+      "senderId": 7,
+      "type": "text",
+      "content": "\"Technicien pas communiquant\"... Tu sais quoi ? C'est ta force, pas ta faiblesse.\n\nLes gars préfèrent un chef qui parle vrai qu'un beau parleur. Tu contrôles quoi ? Ta franchise, ton exemple, et la bataille qu'on va mener ensemble.\n\nQui a dit qu'un chef devait faire des discours ? Un chef montre la voie.",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:24:42.055Z",
+      "status": "read"
+    },
+    {
+      "id": 3007,
+      "conversationId": 14,
+      "senderId": 5,
+      "type": "text",
+      "content": "Les voir avant... oui pourquoi pas. Mais pour leur dire quoi ? 'Restez même si je peux rien promettre' ? Pour la bataille qualité ok, mais comment mobiliser des gars qui pensent qu'on ferme dans 6 mois ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:26:28.055Z",
+      "status": "read"
+    },
+    {
+      "id": 3008,
+      "conversationId": 14,
+      "senderId": 7,
+      "type": "text",
+      "content": "Tu leur dis : \"Je peux pas promettre dans 6 mois. Mais je peux promettre qu'on va se battre et que j'ai besoin des meilleurs pour ça.\"\n\nLa bataille qualité, c'est LEUR job qui se joue. -5% = fermeture. +5% = on reste dans la partie.\n\nDemande-leur : \"Tu préfères partir en victime ou tenter le coup avec moi ?\" Puis écoute vraiment leur réponse.",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:28:12.055Z",
+      "status": "read"
+    }
+  ]
+}

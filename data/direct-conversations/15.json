@@ -1,0 +1,114 @@
+{
+  "id": 15,
+  "lastMessageAt": "2025-01-30T14:28:17.123Z",
+  "participant": {
+    "id": 7,
+    "username": "herve",
+    "displayName": "Hervé Jouffe IA",
+    "avatar": "https://xikbpurswjtmnxwitpzc.supabase.co/storage/v1/object/public/publicimages//PHOTO-2025-06-24-15-28-22.jpg",
+    "lastSeen": "2025-01-30T14:28:17.123Z",
+    "phoneNumber": "+33 6 73 26 92 98"
+  },
+  "messages": [
+    {
+      "id": 10001,
+      "conversationId": 15,
+      "senderId": 5,
+      "type": "text",
+      "content": "Hervé, j'ai besoin d'aide. Jean-Michel sabote tout ce que j'essaie de mettre en place et les autres commencent à le suivre. Comment je fais pour m'imposer sans passer pour le petit chef ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:15:23.456Z",
+      "status": "read"
+    },
+    {
+      "id": 10002,
+      "conversationId": 15,
+      "senderId": 7,
+      "type": "text",
+      "content": "Stéphane, Jean-Michel teste tes limites parce que tu le laisses faire. Un chef qui se fait critiquer devant ses gars perd sa légitimité.\n\nTu dois le recadrer en privé, rapidement. Pas pour 'passer pour le chef', mais pour protéger ton équipe et garantir la sécurité.\n\nQuand est-ce que tu comptes lui parler ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:17:12.789Z",
+      "status": "read"
+    },
+    {
+      "id": 10003,
+      "conversationId": 15,
+      "senderId": 5,
+      "type": "text",
+      "content": "C'est compliqué Hervé... On a roulé ensemble pendant 8 ans. C'était mon binôme, on se connaît par cœur. J'ai pas envie de perdre un ami. Et puis franchement, avec l'audit qui arrive dans 3 semaines, j'ai pas besoin de tensions supplémentaires.",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:18:45.234Z",
+      "status": "read"
+    },
+    {
+      "id": 10004,
+      "conversationId": 15,
+      "senderId": 7,
+      "type": "text",
+      "content": "Justement ! L'audit arrive et Jean-Michel sape les procédures de sécurité devant tout le monde. Tu préfères perdre un ami ou perdre ton poste ?\n\nUn vrai ami respecterait ta position. Là, il met toute l'équipe en danger.\n\nDis-moi : qu'est-ce qui se passe si l'audit capote à cause de lui ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:20:33.567Z",
+      "status": "read"
+    },
+    {
+      "id": 10005,
+      "conversationId": 15,
+      "senderId": 5,
+      "type": "text",
+      "content": "Merde, tu as raison... Si on rate l'audit, c'est ma tête qui saute, pas la sienne. Mais comment je lui dis ça sans que ça dégénère ? Je suis pas doué pour les confrontations, j'ai toujours préféré arrondir les angles.",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:22:08.901Z",
+      "status": "read"
+    },
+    {
+      "id": 10006,
+      "conversationId": 15,
+      "senderId": 7,
+      "type": "text",
+      "content": "On va préparer ensemble. Méthode DESC : Décrire les faits, Exprimer l'impact, Suggérer des solutions, Conclure positivement.\n\nDemain matin, bureau fermé : 'Jean-Michel, hier tu as critiqué les procédures devant 6 gars. Ça mine mon autorité et ça met l'audit en péril. J'ai besoin de ton soutien, pas de ta résistance.'\n\nTu peux le dire ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:23:54.234Z",
+      "status": "read"
+    },
+    {
+      "id": 10007,
+      "conversationId": 15,
+      "senderId": 5,
+      "type": "text",
+      "content": "OK, je vais essayer. Mais s'il me balance que je suis devenu un petit chef depuis ma promo ? Ou s'il menace de se mettre en arrêt ? Je le connais, il peut être têtu comme une mule...",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:25:27.678Z",
+      "status": "read"
+    },
+    {
+      "id": 10008,
+      "conversationId": 15,
+      "senderId": 7,
+      "type": "text",
+      "content": "S'il dit ça, tu restes factuel : 'Je fais mon job pour protéger l'équipe.' S'il menace de partir, tu ne cèdes pas : 'C'est ton choix, mais les règles s'appliquent à tous.'\n\nStéphane, arrête de négocier avec ta peur. Tu n'es plus son binôme, tu es son chef. C'est maintenant ou tu perds le contrôle définitivement.\n\nDemain 9h, tu le convoques ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:26:43.012Z",
+      "status": "read"
+    },
+    {
+      "id": 10009,
+      "conversationId": 15,
+      "senderId": 5,
+      "type": "text",
+      "content": "D'accord Hervé. Demain 9h, je le convoque. J'ai compris... Si je ne prends pas mes responsabilités maintenant, c'est toute l'équipe qui va en pâtir. C'est juste dur d'accepter que notre relation a changé. Mais t'as raison, c'est mon job de chef de faire ça.",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:27:58.345Z",
+      "status": "read"
+    },
+    {
+      "id": 10010,
+      "conversationId": 15,
+      "senderId": 7,
+      "type": "text",
+      "content": "Voilà le chef que ton équipe attend ! C'est dur, oui. Mais nécessaire. Jean-Michel finira par comprendre que tu le protèges aussi.\n\nEnvoie-moi un message après l'entretien. Et souviens-toi : ferme sur les standards, humain avec la personne.\n\nBon courage pour demain. Tu es capable.",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:28:17.123Z",
+      "status": "read"
+    }
+  ]
+}

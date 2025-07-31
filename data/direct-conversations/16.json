@@ -1,0 +1,134 @@
+{
+  "id": 16,
+  "lastMessageAt": "2025-01-30T15:42:00.000Z",
+  "participant": {
+    "id": 7,
+    "username": "herve",
+    "displayName": "Hervé Jouffe IA",
+    "avatar": "https://xikbpurswjtmnxwitpzc.supabase.co/storage/v1/object/public/publicimages//PHOTO-2025-06-24-15-28-22.jpg",
+    "lastSeen": "2025-01-30T15:42:00.000Z",
+    "phoneNumber": "+33 6 73 26 92 98"
+  },
+  "messages": [
+    {
+      "id": 4001,
+      "conversationId": 16,
+      "senderId": 5,
+      "type": "text",
+      "content": "Bonjour Hervé, mon projet de digitalisation est bloqué par les anciens. Ils pensent que je veux les remplacer par des machines... Comment je peux les embarquer dans cette transformation ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:00:00.000Z",
+      "status": "read"
+    },
+    {
+      "id": 4002,
+      "conversationId": 16,
+      "senderId": 7,
+      "type": "text",
+      "content": "Les anciens bloquent parce que tu leur parles techno, pas terrain.\n\nRobert a 25 ans d'expérience. Il a peur de quoi selon toi - des machines ou de perdre sa valeur ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:01:30.000Z",
+      "status": "read"
+    },
+    {
+      "id": 4003,
+      "conversationId": 16,
+      "senderId": 5,
+      "type": "text",
+      "content": "Perdre sa valeur, évidemment... mais le système est justement là pour les aider ! Il va leur faire gagner du temps sur les relevés manuels, détecter les anomalies plus vite. C'est objectivement mieux ! J'ai préparé une présentation de 40 slides qui montre tous les bénéfices...",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:03:45.000Z",
+      "status": "read"
+    },
+    {
+      "id": 4004,
+      "conversationId": 16,
+      "senderId": 7,
+      "type": "text",
+      "content": "40 slides ? Tu veux les endormir ou les convaincre ?\n\nRobert n'en a rien à faire de tes graphiques. Ce qu'il veut savoir : \"Est-ce que mon expertise compte encore ?\" Va le voir seul, sans PowerPoint. Demande-lui comment il détecte une anomalie aujourd'hui.",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:05:15.000Z",
+      "status": "read"
+    },
+    {
+      "id": 4005,
+      "conversationId": 16,
+      "senderId": 5,
+      "type": "text",
+      "content": "Sans présentation ? Mais comment je lui explique le système alors ? Les capteurs IoT, l'algorithme de machine learning, l'interface temps réel... C'est complexe ! Et puis Robert, il est têtu. La dernière fois que j'ai essayé de lui parler, il m'a dit \"ça fait 25 ans que je fais ce métier, j'ai pas besoin qu'un ingénieur me dise comment travailler\"",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:07:30.000Z",
+      "status": "read"
+    },
+    {
+      "id": 4006,
+      "conversationId": 16,
+      "senderId": 7,
+      "type": "text",
+      "content": "Justement ! Il t'a donné la clé : 25 ans d'expérience.\n\nNouveau plan : \"Robert, j'ai besoin de ton expertise pour paramétrer le système. Sans toi, il sera idiot.\" Puis tu l'écoutes vraiment. Pas d'algo, pas d'IoT. Juste : comment tu fais aujourd'hui ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:09:00.000Z",
+      "status": "read"
+    },
+    {
+      "id": 4007,
+      "conversationId": 16,
+      "senderId": 5,
+      "type": "text",
+      "content": "L'écouter... ok mais concrètement ? Je vais chez lui et je dis quoi ? \"Salut Robert, explique-moi ton métier\" ? Il va me prendre pour un touriste ! Et le comité attend des résultats dans 8 semaines, j'ai pas le temps de faire du social...",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:11:15.000Z",
+      "status": "read"
+    },
+    {
+      "id": 4008,
+      "conversationId": 16,
+      "senderId": 7,
+      "type": "text",
+      "content": "\"Pas le temps de faire du social\" ? C'est exactement pourquoi ton projet est planté.\n\nDis-lui : \"Robert, le système qu'on installe, c'est de la merde sans ton paramétrage. J'ai besoin que tu m'apprennes comment tu détectes un problème qualité.\" Ensuite, ferme ta gueule et écoute.\n\nTu préfères perdre 8 semaines ou 200K€ ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:12:45.000Z",
+      "status": "read"
+    },
+    {
+      "id": 4009,
+      "conversationId": 16,
+      "senderId": 5,
+      "type": "text",
+      "content": "OK je vois... c'est vrai que sans eux, le système ne servira à rien. Mais admettons que Robert accepte de m'aider. Et les autres ? L'équipe de Nantes qui boycotte les formations ? Mon N+1 qui me demande des KPI toutes les semaines ? J'ai l'impression d'être pris en sandwich entre la direction qui pousse et le terrain qui résiste",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:15:00.000Z",
+      "status": "read"
+    },
+    {
+      "id": 4010,
+      "conversationId": 16,
+      "senderId": 7,
+      "type": "text",
+      "content": "Tu es pris en sandwich parce que tu joues l'intermédiaire au lieu d'être le chef de projet.\n\nUne fois Robert convaincu, tu en fais ton ambassadeur. \"Robert va piloter l'adaptation terrain du système.\" Les gars de Nantes écouteront Robert, pas toi. Pour ton N+1 : \"On avance, Robert paramètre le système avec son expertise.\"\n\nAction : demain matin, café avec Robert. Deal ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:16:30.000Z",
+      "status": "read"
+    },
+    {
+      "id": 4011,
+      "conversationId": 16,
+      "senderId": 5,
+      "type": "text",
+      "content": "Deal. Demain 8h30, je passe à l'atelier avec deux cafés. Pas de slides, pas de tablette, juste moi et mes oreilles. C'est contre-intuitif pour moi mais... au point où on en est, faut que j'essaie autre chose. Je te tiens au courant de comment ça se passe ?",
+      "metadata": {},
+      "createdAt": "2025-01-30T14:18:45.000Z",
+      "status": "read"
+    },
+    {
+      "id": 4012,
+      "conversationId": 16,
+      "senderId": 7,
+      "type": "text",
+      "content": "Voilà l'état d'esprit ! Le café c'est bien, mais surtout : sincérité totale. Si Robert sent que tu fais semblant, c'est mort.\n\nEnvoie-moi un message après. Et souviens-toi : tu ne vends pas un système, tu construis une équipe augmentée.\n\nBon courage Philippe. Tu vas voir, Robert va te surprendre.",
+      "metadata": {},
+      "createdAt": "2025-01-30T15:42:00.000Z",
+      "status": "read"
+    }
+  ]
+}
